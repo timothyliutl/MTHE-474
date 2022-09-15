@@ -3,6 +3,13 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{wasysym}
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
 
 \begin{document}
 \title{MTHE 474 Notes}
@@ -11,7 +18,36 @@
 \maketitle
 \newpage
 
-\section*{Chapter 2 Notes}
+\section*{Information Measures for Discrete Systems}
+\subsection*{Definitions}
+\begin{flushleft}
+    \begin{itemize}
+   
+    \item \textbf{Definition 2.2:} Entropy of discrete random variable \(X\) with pmf \(P_X(*)\) is defined as \[H(x):=-\sum_{x \in X}{P_X(x)*\log_{2}{P_X(x)}}\]
+
+    \item \textbf{Definition 2.2:} Entropy of discrete random variable \(X\) with pmf \(P_X(*)\) is defined as \[H(x):=-\sum_{x \in X}{P_X(x)*\log_{2}{P_X(x)}}\]
+    \item \textbf{Definition 2.8 (Joint entropy):} \[H(X,Y) := - \sum_{(x,y) \in \mathcal{X} \times \mathcal{Y}}{P_{X,Y}{(x,y)}*\log_{2}{P_({X,Y}){(x,y)}}}\]
+    \item \textbf{Definition 2.9 (Conditional entropy):} \[H(Y|X) := \sum_{x \in \mathcal{X}} P_X(x) (-\sum_{y \in \mathcal{Y}} P_{Y|X}{(y|x)} * \log_{2}{P_{Y|X}{(y|x)}})\]
+    \item 
+    \end{itemize}
+\end{flushleft}
+
+
+
+\subsection*{Lemmas/Theorems}
+\begin{flushleft}
+    \begin{itemize}
+        \item \textbf{Lemma 2.4 (Fundamental Inequality):} \(\forall\) \(x>0\) and \(D > 1\) we have \[\log_{D}{(X)} \leq \log_{D}{e}*(x-1) \]
+
+        \item \textbf{Lemma 2.5 (Non-negativity):} \(H(X) \geq 0\)
+    
+        \item \textbf{Lemma 2.6 (Entropy Upper-Bound):} \(H(X) \leq \log_{2}{|\mathcal{X}|} \) where random variable X takes values from finite set \(\mathcal{X}\)
+    
+        \item \textbf{Lemma 2.7 (Log-Sum inequality)} Write this one out later 
+        \item \textbf{Theorem 2.10 (Chain rule for entropy): } \( H(X,Y) = H(X) + H(Y|X)\)
+    \end{itemize}
+\end{flushleft}
+
 
 
 
