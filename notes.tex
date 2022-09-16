@@ -17,9 +17,9 @@
 \date{September 15, 2022}
 \maketitle
 \newpage
-
-\section*{Information Measures for Discrete Systems}
-\subsection*{Definitions}
+\section*{Chapter 2}
+\subsection*{Information Measures for Discrete Systems}
+\subsubsection*{Definitions}
 \begin{flushleft}
     \begin{itemize}
    
@@ -34,7 +34,7 @@
 
 
 
-\subsection*{Lemmas/Theorems}
+\subsubsection*{Lemmas/Theorems}
 \begin{flushleft}
     \begin{itemize}
         \item \textbf{Lemma 2.4 (Fundamental Inequality):} \(\forall\) \(x>0\) and \(D > 1\) we have \[\log_{D}{(X)} \leq \log_{D}{e}*(x-1) \]
@@ -45,10 +45,34 @@
     
         \item \textbf{Lemma 2.7 (Log-Sum inequality)} Write this one out later 
         \item \textbf{Theorem 2.10 (Chain rule for entropy): } \( H(X,Y) = H(X) + H(Y|X)\)
+
     \end{itemize}
 \end{flushleft}
 
+\subsection*{Mutual Information}
 
+\begin{flushleft}
+    \subsubsection*{Definitions}
+    \begin{itemize}
+        \item \textbf{Definition 2.2.1 (Mutual Information):} \[I(X;Y):= H(X) - H(X|Y)\]
+        \item \textbf{Definition 2.2.2 (Conditional Mutual Information):} \[I(X;Y|Z) := H(X|Z) - H(X|Y, Z)\]
+    \end{itemize}
+    \subsubsection*{Lemmas}
+    \begin{itemize}
+        \item \textbf{Lemma 2.15 (Properties of Mutual Information): } 
+        \begin{flalign}
+        &1.\ I(X;Y) = \sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} P_{X,Y}(x,y) \log_2{\frac{P_{X,Y}{(x,y)}}{P_X{(x)}P_Y{(y)}}} \\ 
+        &2.\ I(X;Y) = I(Y;X) = H(Y) - H(Y|X) \\
+        &3.\ I(X;Y) = H(X) + H(Y) - H(X,Y) \ \ \text{equality iff X is a function of Y} \\
+        &4.\ I(X;Y) \leq H(X) \\
+        &5.\ I(X;Y) \leq 0 \ \text{with equality iff X and Y are independent} \\
+        &6.\ I(X;Y) \leq min\{\log_2{{|\mathcal{X}}|}, \log_2{|\mathcal{Y}}|\}
+        \end{flalign}
+        \item \textbf{Lemma 2.16 (Chain Rule for Mutual Information):} \[I(X; Y, Z) = I(X;Y) + I(X; Z|Y) = I(X;Z) + I(X;Y|Z)\]
+        \item \textbf{Theorem 2.17 (Chain Rule for entropy):} \(X^n := (X_1, \ldots, X_n)\) and \(x^n := (x_1, \ldots, x_n)\)
+        \[H(X^n) = \sum_{i=1}^{n}{H(X_i|X^{i-1})}\]
+    \end{itemize}
+\end{flushleft}
 
 
 \end{document}
