@@ -75,7 +75,29 @@
         \item \textbf{Lemma 2.16 (Chain Rule for Mutual Information):} \[I(X; Y, Z) = I(X;Y) + I(X; Z|Y) = I(X;Z) + I(X;Y|Z)\]
         \item \textbf{Theorem 2.17 (Chain Rule for entropy):} \(X^n := (X_1, \ldots, X_n)\) and \(x^n := (x_1, \ldots, x_n)\)
         \[H(X^n) = \sum_{i=1}^{n}{H(X_i|X^{i-1})}\]
+        \item \textbf{Theorem 2.18 (Chain Rule for conditional entropy):}
+        \[H(X_1, X_2, \ldots, X_n | Y) = \sum_{i=1}^{n} H(X_i|X_{i-1}, \ldots, X_1, Y)\]
+        \item \textbf{Theorem 2.19 (Chain Rule for Mutual information):}
+        \[I(X_1, X_2, \ldots, X_n; Y) = \sum_{i=1}^{n} I(X_i; Y|X_{i-1}, \ldots, X_1)\]
+        Where \(I(X_i;Y|X_{i-1}, \ldots, X_1):=I(X_1, Y)\) for \(i = 1\)
     \end{itemize}
+\end{flushleft}
+
+\subsection{Convex/Concavity of Information Measures}
+\subsubsection{Definitions}
+\begin{itemize}
+    \item \textbf{Lecture 6 Definition (Convex Set):} \[\text{A subset K of } \mathbb{R} \text{ is called convex if the line segment joining any two points in K also lies in K}\]
+    \item \textbf{Lecture 6 Definition (Convex Function):} The function \(f: k \to \mathbb{R}\) where k is a convex subset of \(\mathbb{R}^n\), is called convex on \(k\) if \(\forall x_1,x_2 \in k\) and \(\lambda \in [0,1]\),
+    \[f(\lambda x_1 + (1-\lambda)x_2)\leq \lambda f(x_1) + (1-\lambda) f(x_2)\]
+    Strict equality holds whenever \(x_1 \neq x_2\) and \(0< \lambda < 1\) then \(f\) is called strictly convex
+    \item \textbf{Lecture 6 Definition (Concave Function):}
+\end{itemize}
+\subsubsection{Theorems}
+\begin{itemize}
+    \item \textbf{Lecture 6 Theorem (Jensen's Inequality):}
+\end{itemize}
+\begin{flushleft}
+    
 \end{flushleft}
 
 
