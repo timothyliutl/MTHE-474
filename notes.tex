@@ -67,8 +67,8 @@
         \begin{flalign}
         &1.\ I(X;Y) = \sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} P_{X,Y}(x,y) \log_2{\frac{P_{X,Y}{(x,y)}}{P_X{(x)}P_Y{(y)}}} \\ 
         &2.\ I(X;Y) = I(Y;X) = H(Y) - H(Y|X) \\
-        &3.\ I(X;Y) = H(X) + H(Y) - H(X,Y) \ \ \text{equality iff X is a function of Y} \\
-        &4.\ I(X;Y) \leq H(X) \\
+        &3.\ I(X;Y) = H(X) + H(Y) - H(X,Y) \ \  \\
+        &4.\ I(X;Y) \leq H(X) \ \ \text{equality iff X is a function of Y} \\
         &5.\ I(X;Y) \leq 0 \ \text{with equality iff X and Y are independent} \\
         &6.\ I(X;Y) \leq \min\{\log_2{{|\mathcal{X}}|}, \log_2{|\mathcal{Y}}|\}
         \end{flalign}
@@ -83,6 +83,25 @@
     \end{itemize}
 \end{flushleft}
 
+\subsection{Conditional Divergence}
+\subsubsection{Definitions}
+\subsubsection{Theorems}
+% To do later
+
+\subsection{Data Processing Inequality}
+\subsubsection{Definitions}
+\begin{itemize}
+    \item \textbf{Lecture 7 Definition (Markov Chain):} Three jointly distributed random variables \(X,Y,Z\) are said to form a Markov Chain (in that order), denoted by \(X \to Y \to Z\)
+    \\if:
+    \[P_{XZ|Y}(x,y|z) = P_{X|Y}(x|y) P_{Z|Y}(z,y) \Longleftrightarrow P_{Z|XY}(z|x,y) = P_{Z|Y}(z|y)\]
+    \\ \(\forall x \in X, y \in Y, z \in Z\)
+\end{itemize}
+\subsubsection{Theorems}
+\begin{itemize}
+    \item \textbf{Lecture 7 Theorem (Data Processing Inequality):} If \(X \to Y \to Z\), then 
+    \[I(X;Y) \leq I(X;Z)\]
+\end{itemize}
+
 \subsection{Convex/Concavity of Information Measures}
 \subsubsection{Definitions}
 \begin{itemize}
@@ -90,15 +109,29 @@
     \item \textbf{Lecture 6 Definition (Convex Function):} The function \(f: k \to \mathbb{R}\) where k is a convex subset of \(\mathbb{R}^n\), is called convex on \(k\) if \(\forall x_1,x_2 \in k\) and \(\lambda \in [0,1]\),
     \[f(\lambda x_1 + (1-\lambda)x_2)\leq \lambda f(x_1) + (1-\lambda) f(x_2)\]
     Strict equality holds whenever \(x_1 \neq x_2\) and \(0< \lambda < 1\) then \(f\) is called strictly convex
-    \item \textbf{Lecture 6 Definition (Concave Function):}
+    \item \textbf{Lecture 6 Definition (Concave Function):} \(f: k \to \mathbb{R}\) is concave on \(k\) (where \( k \subseteq \mathbb{R}^n\) is a concave subset) if \(-f\) is convex. In other words:
+    if \(\forall x_1,x_2 \in k\) and \(\lambda \in [0,1]\),
+    \[f(\lambda x_1 + (1-\lambda)x_2)\geq \lambda f(x_1) + (1-\lambda) f(x_2)\]
+
 \end{itemize}
 \subsubsection{Theorems}
 \begin{itemize}
-    \item \textbf{Lecture 6 Theorem (Jensen's Inequality):}
+    \item \textbf{Lecture 6 Theorem (Jensen's Inequality):} Let \(K \subseteq \mathbb{R}\) and let \(f:k \to \mathbb{R}\) be a convex function. Also let  x be a RV with alphabet \(\mathcal{X} \subseteq k\) and finite mean, then
+    \[E[f(x)] \leq f(E[x])\]
+    Also if f is strictly convex, then the inequality is strict unless x is deterministic
+    \item \textbf{Lecture 7 Theorem (Convexity/Concavity of Information Measures):}
+       \\i. \(D(p||q)\) \ is convex in the pair \((p,q)\) (ie: if \(p_1,q_1\) and \(p_2,q_2\) are two pairs of PMFs defined on \(\mathcal{X}\)) then: \\
+        \[D(\Lambda p_1 + (1-\lambda)p_2 || \lambda q_1 + (1-\lambda) q_2) \leq \lambda d(p_1 || q_1) + (1- \lambda) D(p_2 || q_2)\]
+        \(\forall \lambda \in [0,1]\)
+        \\
+        \\
+        ii.\ if \(x ~ P_x\), then
+        \[H(x) = H(p_x) \text{ is concave in } P_x\]
+        \\
+        iii.\ If \((x,y)~P_X P_{Y|X}\), then \(I(X;Y) = I(P_X, P_{Y|X})\) is concave in \(P_X\) for fixed \(P_{Y|X}\) and convex in \(P_{Y|X}\) for fixed \(P_X\)
 \end{itemize}
-\begin{flushleft}
-    
-\end{flushleft}
+
+
 
 
 \end{document}
