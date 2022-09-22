@@ -21,7 +21,7 @@
 \tableofcontents
 
 \newpage
-\section{Chapter 2}
+\section{Chapter 2 Topics}
 \subsection{Information Measures for Discrete Systems}
 \subsubsection{Definitions}
 \begin{flushleft}
@@ -30,7 +30,7 @@
     \item \textbf{Definition 2.2:} Entropy of discrete random variable \(X\) with pmf \(P_X(*)\) is defined as \[H(x):=-\sum_{x \in X}{P_X(x)*\log_{2}{P_X(x)}}\]
 
     \item \textbf{Definition 2.2:} Entropy of discrete random variable \(X\) with pmf \(P_X(*)\) is defined as \[H(x):=-\sum_{x \in X}{P_X(x)*\log_{2}{P_X(x)}}\]
-    \item \textbf{Definition 2.8 (Joint entropy):} \[H(X,Y) := - \sum_{(x,y) \in \mathcal{X} \times \mathcal{Y}}{P_{X,Y}{(x,y)}*\log_{2}{P_({X,Y}){(x,y)}}}\]
+    \item \textbf{Definition 2.8 (Joint entropy):} \[H(X,Y) := - \sum_{(x,y) \in \mathcal{X} \times \mathcal{Y}}{P_{X,Y}{(x,y)}*\log_{2}{P_{({X,Y})}{(x,y)}}}\]
     \item \textbf{Definition 2.9 (Conditional entropy):} \[H(Y|X) := \sum_{x \in \mathcal{X}} P_X(x) (-\sum_{y \in \mathcal{Y}} P_{Y|X}{(y|x)} * \log_{2}{P_{Y|X}{(y|x)}})\]
     \item 
     \end{itemize}
@@ -41,7 +41,7 @@
 \subsubsection{Lemmas/Theorems}
 \begin{flushleft}
     \begin{itemize}
-        \item \textbf{Lemma 2.4 (Fundamental Inequality):} \(\forall\) \(x>0\) and \(D > 1\) we have \[\log_{D}{(X)} \leq \log_{D}{e}*(x-1) \]
+        \item \textbf{Lemma 2.4 (Fundamental Inequality):} \(\forall\) \(x>0\) and \(D > 1\) we have \[\log_{D}{(x)} \leq \log_{D}{e}*(x-1) \]
 
         \item \textbf{Lemma 2.5 (Non-negativity):} \(H(X) \geq 0\)
     
@@ -116,7 +116,7 @@
 \end{itemize}
 \subsubsection{Theorems}
 \begin{itemize}
-    \item \textbf{Lecture 6 Theorem (Jensen's Inequality):} Let \(K \subseteq \mathbb{R}\) and let \(f:k \to \mathbb{R}\) be a convex function. Also let  x be a RV with alphabet \(\mathcal{X} \subseteq k\) and finite mean, then
+    \item \textbf{Lecture 6 Theorem (Jensen's Inequality):} Let \(K \subseteq \mathbb{R}\) (where \(K\) is a convex set?) and let \(f:k \to \mathbb{R}\) be a convex function. Also let  x be a RV with alphabet \(\mathcal{X} \subseteq k\) and finite mean, then
     \[E[f(x)] \leq f(E[x])\]
     Also if f is strictly convex, then the inequality is strict unless x is deterministic
     \item \textbf{Lecture 7 Theorem (Convexity/Concavity of Information Measures):}
@@ -129,6 +129,7 @@
         \[H(x) = H(p_x) \text{ is concave in } P_x\]
         \\
         iii.\ If \((x,y)~P_X P_{Y|X}\), then \(I(X;Y) = I(P_X, P_{Y|X})\) is concave in \(P_X\) for fixed \(P_{Y|X}\) and convex in \(P_{Y|X}\) for fixed \(P_X\)
+
 \end{itemize}
 
 
