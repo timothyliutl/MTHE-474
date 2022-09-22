@@ -27,9 +27,9 @@
 \begin{flushleft}
     \begin{itemize}
    
-    \item \textbf{Definition 2.2:} Entropy of discrete random variable \(X\) with pmf \(P_X(*)\) is defined as \[H(x):=-\sum_{x \in X}{P_X(x)*\log_{2}{P_X(x)}}\]
+    \item \textbf{Definition 2.2:} Entropy of discrete random variable \(X\) with pmf \(P_X(*)\) is defined as \[H(X):=-\sum_{x \in X}{P_X(x)*\log_{2}{P_X(x)}}\]
 
-    \item \textbf{Definition 2.2:} Entropy of discrete random variable \(X\) with pmf \(P_X(*)\) is defined as \[H(x):=-\sum_{x \in X}{P_X(x)*\log_{2}{P_X(x)}}\]
+    \item \textbf{Definition 2.2:} Entropy of discrete random variable \(X\) with pmf \(P_X(*)\) is defined as \[H(X):=-\sum_{x \in X}{P_X(x)*\log_{2}{P_X(x)}}\]
     \item \textbf{Definition 2.8 (Joint entropy):} \[H(X,Y) := - \sum_{(x,y) \in \mathcal{X} \times \mathcal{Y}}{P_{X,Y}{(x,y)}*\log_{2}{P_{({X,Y})}{(x,y)}}}\]
     \item \textbf{Definition 2.9 (Conditional entropy):} \[H(Y|X) := \sum_{x \in \mathcal{X}} P_X(x) (-\sum_{y \in \mathcal{Y}} P_{Y|X}{(y|x)} * \log_{2}{P_{Y|X}{(y|x)}})\]
     \item 
@@ -125,7 +125,7 @@
     Also if f is strictly convex, then the inequality is strict unless x is deterministic
     \item \textbf{Lecture 7 Theorem (Convexity/Concavity of Information Measures):}
        \\i. \(D(p||q)\) \ is convex in the pair \((p,q)\) (ie: if \(p_1,q_1\) and \(p_2,q_2\) are two pairs of PMFs defined on \(\mathcal{X}\)) then: \\
-        \[D(\Lambda p_1 + (1-\lambda)p_2 || \lambda q_1 + (1-\lambda) q_2) \leq \lambda d(p_1 || q_1) + (1- \lambda) D(p_2 || q_2)\]
+        \[D(\lambda p_1 + (1-\lambda)p_2 || \lambda q_1 + (1-\lambda) q_2) \leq \lambda d(p_1 || q_1) + (1- \lambda) D(p_2 || q_2)\]
         \(\forall \lambda \in [0,1]\)
         \\
         \\
@@ -134,6 +134,15 @@
         \\
         iii.\ If \((x,y)~P_X P_{Y|X}\), then \(I(X;Y) = I(P_X, P_{Y|X})\) is concave in \(P_X\) for fixed \(P_{Y|X}\) and convex in \(P_{Y|X}\) for fixed \(P_X\)
 
+\end{itemize}
+
+\section{Tutorial Proofs}
+\subsection{Week 2 Tutorial}
+\begin{itemize}
+    \item Given 2 discrete RVs, \(X, Y\) we have that
+    \[H(Y|X) = 0 \Longleftrightarrow \text{Y is a function of X}\]
+    \item Given RV \(X\) with alphabet \(\mathcal{X}\) and function \(f: x \to \mathbb{R}\)
+    \[H(X) \leq H(f(X))\]
 \end{itemize}
 
 
