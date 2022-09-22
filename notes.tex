@@ -47,7 +47,11 @@
     
         \item \textbf{Lemma 2.6 (Entropy Upper-Bound):} \(H(X) \leq \log_{2}{|\mathcal{X}|} \) where random variable X takes values from finite set \(\mathcal{X}\)
     
-        \item \textbf{Lemma 2.7 (Log-Sum inequality)} Write this one out later 
+        \item \textbf{Lemma 2.7 (Log-Sum inequality):} For nonnegative numbers, \(a_1, a_2, \ldots, a_n\) and \(b_1, b_2, \ldots, b_n\)
+        \[\sum_{i=1}^{n}(a_i \log_D \frac{a_i}{b_i}) \leq (\sum_{i=1}^n a_i) \log_D \frac{\sum_{i=1}^n a_i}{\sum_{i=1}^n b_i}\]  
+        with equality iff for all \(i=1, \ldots, n\)
+        \[\frac{a_i}{b_i} = \frac{\sum_{j=1}^n a_j}{\sum_{j=1}^n b_j}\]
+        is constand and does not depend on i
         \item \textbf{Theorem 2.10 (Chain rule for entropy): } \( H(X,Y) = H(X) + H(Y|X)\)
 
     \end{itemize}
