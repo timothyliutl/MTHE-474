@@ -107,6 +107,17 @@
 \end{itemize}
 % To do later
 
+\subsection{Fano's Inequality}
+\subsubsection{Definitions}
+\subsubsection{Theorems/Lemmas}
+\begin{itemize}
+    \item \textbf{Lemma 2.6 (Fano's inequality):} Let \(X\) and \(Y\) be two random variables with alphabets \(\mathcal{X} \text{ and } \mathcal{Y}\) respectively (\(\mathcal{X}\) is finite but \(\mathcal{Y}\) can be countably infinite).
+    Let \(\hat{X} := g(Y)\) represent the estimate of X by observing Y and \(P_e := \Pr[\hat{X} \neq X]\) represent the probability of error of this observation
+    \\Then the following holds
+    \[H(X|Y) \leq h_b(P_e) + P_e * \log_{2} (\mid \mathcal{X} \mid -1)\]
+    Where \(h_b(P_e)\) is the binary entropy with probability \(P_e\)
+\end{itemize}
+
 \subsection{Data Processing Inequality}
 \subsubsection{Definitions}
 \begin{itemize}
@@ -114,6 +125,10 @@
     \\if:
     \[P_{XZ|Y}(x,y|z) = P_{X|Y}(x|y) P_{Z|Y}(z,y) \Longleftrightarrow P_{Z|XY}(z|x,y) = P_{Z|Y}(z|y)\]
     \\ \(\forall x \in X, y \in Y, z \in Z\)
+    \\
+    \begin{itemize}
+        \item The probability of each event ONLY depends on the state attained on the previous event
+    \end{itemize}
 \end{itemize}
 \subsubsection{Theorems}
 \begin{itemize}
@@ -150,7 +165,7 @@
         \(\forall \lambda \in [0,1]\)
         \\
         \\
-        ii.\ if \(x ~ P_x\), then
+        ii.\ if \(x \sim  P_x\), then
         \[H(x) = H(p_x) \text{ is concave in } P_x\]
         \\
         iii.\ If \((x,y)~P_X P_{Y|X}\), then \(I(X;Y) = I(P_X, P_{Y|X})\) is concave in \(P_X\) for fixed \(P_{Y|X}\) and convex in \(P_{Y|X}\) for fixed \(P_X\)
@@ -165,6 +180,7 @@
     \item Given RV \(X\) with alphabet \(\mathcal{X}\) and function \(f: x \to \mathbb{R}\)
     \[H(X) \leq H(f(X))\]
 \end{itemize}
+\subsection{Week 3 Tutorial}
 
 % https://math.stackexchange.com/questions/4531722/simplifying-entropy-hx-y-xy
 
