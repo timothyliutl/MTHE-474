@@ -53,6 +53,14 @@
         \[\frac{a_i}{b_i} = \frac{\sum_{j=1}^n a_j}{\sum_{j=1}^n b_j}\]
         is constand and does not depend on i
         \item \textbf{Theorem 2.10 (Chain rule for entropy): } \( H(X,Y) = H(X) + H(Y|X)\)
+        \item \textbf{Theorem 2.12 (Conditioning never increases entropy):} \(H(X|Y) \leq H(X)\) \\
+        with equality holding iff \(X\) and \(Y\) are independent
+        \item \textbf{Lemma 2.13 (Entropy is additive for independent RVs): } For independent \(X, Y\)
+        \[H(X,Y) = H(X) + H(Y)\]
+        \item \textbf{Lemma 2.14 (Conditional entropy is lower additive): } \(H(X_1, X_2|Y_1, Y_2) \leq H(X_1|Y_1) + H(X_2|Y_2)\)
+        \\ with equality holding iff 
+        \[P_{X_1, X_2|Y_1, Y_2} (x_1, x_2|y_1, y_2) = P_{X_1|Y_1}(x_1|y_1)P_{X_2|Y_2}(x_2|y_2)\]
+        for all \(x_1, x_2, y_1, y_2\)
 
     \end{itemize}
 \end{flushleft}
@@ -89,7 +97,14 @@
 
 \subsection{Conditional Divergence}
 \subsubsection{Definitions}
+\begin{itemize}
+    \item \textbf{Definition 2.29 (Divergence):} Given 2 discrete random variables \(X\) and \(\hat{x}\) defined over common alphabet \(\mathcal{X}\) divergence is defined by,
+    \[D(X||\hat{X}) := E_x[\log_2 \frac{P_X (X)}{P_{\hat{X}}(X)}] = \sum_{x \in \mathcal{X}} P_X(x) \log_2 \frac{P_X(x)}{P_{\hat{X}}(x)}\]
+\end{itemize}
 \subsubsection{Theorems}
+\begin{itemize}
+    \item \textbf{Lemma 2.30 (Nonnegativity of Divergence):} \(D(X||\hat{X}) \geq 0\), with equality iff \(P_X(x) = P_{\hat{X}}(x)\) for all \(x \in \mathcal{X}\)
+\end{itemize}
 % To do later
 
 \subsection{Data Processing Inequality}
@@ -104,6 +119,12 @@
 \begin{itemize}
     \item \textbf{Lecture 7 Theorem (Data Processing Inequality):} If \(X \to Y \to Z\), then 
     \[I(X;Y) \leq I(X;Z)\]
+    \begin{itemize}
+        \item Another way to think of this is that the futher the RVs are along the markov chain, the less relevant the RVs are with eachother and the less information we get
+    \end{itemize}
+    \item \textbf{Lecture 8 Theorem (DPI for Divergence):} Given fixed conditional PMF \(P_{Y|X}\) on \(y \times x\), which describes a channel with input x and output y,
+    let \(P_x\) and \(q_x\) be 2 possible PMFs for input \(x\) with corresponding output PMFs \(P_y \text{ and } q_y\) respectively, then
+    \[D(P_x||q_x) \leq D(P_y||q_y)\]
 \end{itemize}
 
 \subsection{Convex/Concavity of Information Measures}
@@ -145,7 +166,7 @@
     \[H(X) \leq H(f(X))\]
 \end{itemize}
 
-
+% https://math.stackexchange.com/questions/4531722/simplifying-entropy-hx-y-xy
 
 
 \end{document}
