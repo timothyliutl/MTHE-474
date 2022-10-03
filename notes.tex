@@ -172,6 +172,38 @@
 
 \end{itemize}
 
+\section{Chapter 3 Topics}
+\subsection{Principles of Data Compression}
+\subsubsection{Definitions}
+\begin{itemize}
+    \item \textbf{Lecture 9 Definition (Discrete Memoryless Source):}
+    A DMS is an infinite sequence of i.d.d random variables \(\{x_{i}\}^\infty_{i=1} = \{x_1, x_2, \ldots\}\), such that all the random variables have a common PMF \(P_x\) defined on the alphabet/finite set \(\mathcal{X}\)
+\\ i.d.d property: \(P(X_1 = a_1, \ldots, X_n = a_n) = \prod_{i=1}^n P(X_i=a_i)\)
+    \item \textbf{Lecture 9 Definition (Convergence in Probability):} Given sequence \(\{x_i\}^\infty_{i=1}\) of RVs and RV Z,
+    \[X_n \xrightarrow[]{n\to\infty} \text{ in probability} \Longleftrightarrow \forall \epsilon > 0, \lim_{n\to\infty} P(|X_n-Z|>\epsilon)=0\]    
+    \item \textbf{Lecture 9 Definition (Typical Set):} For a DMS \(\{x_i\}^\infty_{i=1}\) with PMF \(P_x\) and entropy \(H(X)\), given integer \(n \geq 1\)
+    and \(\epsilon >\) 0, the typical set \(A_\epsilon^{(n)}\) with respect to the source is
+    \[A^{(n)}_\epsilon = \{a^n \in \mathcal{X}: |-\frac{1}{n} \log_2 P_{X^n}(a^n) - H(X)|\leq\epsilon\}\]
+   
+
+\end{itemize}
+\subsubsection{Theorems/Lemmas}
+\begin{itemize}
+    \item \textbf{Lecture 9 Theorem (Weak Law of Large Numbers):} if \(\{x_i\}^{\infty}_{i=i}\) is a DMS then 
+\[\frac{1}{n} \sum^n_{i=1} x_i \xrightarrow{n\to\infty} E[X]\] in probability
+    \item \textbf{Lecture 9 Theorem (Asymptotic Equipartition Property):} (also known as ``entropy stability property``)
+    For a DMS \(\{x_i\}^\infty_{i=1}\) with PMF \(P_x\) and alphabet \(\mathcal{X}\),
+    \[-\frac{1}{n} \log_2 P_{X^n}(x^n) \xrightarrow[]{n\to\infty}H(X) \text{ in probability}\]
+    \item \textbf{Lecture 9 Theorem (Consequence of AEP):} For a DMS \(\{x_i\}_{i=1}^\infty\) with PMF \(P_x\) and entropy \(H(X)\) the typical set satisfies
+    \begin{itemize}
+        \item \(\lim_{n\to\infty} P(A_{\epsilon}^{(n)})=1\)
+        \item \(|A_\epsilon^{(n)}| \leq 2^{n(H(X)+\epsilon)}\) Where \(|A|\) is the size of set A
+        \item \(|A_\epsilon^{(n)}| \geq (1-\epsilon)2^{n(H(X)-\epsilon)}\) for \(n\) sufficiently large
+    \end{itemize}
+
+    
+\end{itemize}
+
 \section{Tutorial Proofs}
 \subsection{Week 2 Tutorial}
 \begin{itemize}
