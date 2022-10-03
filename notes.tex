@@ -209,9 +209,30 @@
         \item \(|A_\epsilon^{(n)}| \leq 2^{n(H(X)+\epsilon)}\) Where \(|A|\) is the size of set A
         \item \(|A_\epsilon^{(n)}| \geq (1-\epsilon)2^{n(H(X)-\epsilon)}\) for \(n\) sufficiently large
     \end{itemize}
-
+    \item \textbf{Lecture 10 Theorem (Shannon's Fixed-length lossless source coding theorem for DMS):} For integer \(D\leq2\), consider a DMS \(\{x_i\}^{\infty}_{i=i}\) with alphabet \(\mathcal{X}\), PMF \(P_x\) and
+    source entropy \(H_D(X) = - \sum_{a \in \mathcal{X}} P_X(a) \log_D P_X(a)\) then the following hold:
+    \begin{itemize}
+        \item (i.\ forward part) \(\forall \epsilon \in (0,1)\) and \(0<\delta<\epsilon\), \(\exists\) a sequences of D-ary (k,n) fixed length codes \(\varphi_n\) such that,
+        \[\limsup_{n\to\infty}\frac{k}{n} \leq H_d(x) + \delta\] 
+        \[\text{ and } \]
+        \[P_e(\varphi_n)< \epsilon \text{ for n sufficiently large}\]
+        
+        \item (ii.\ strong converse part) \(\forall \epsilon \in (0,1)\) and any sequence of D-ary (k,n) fixed-length codes \(\varphi_n\) for the source\\ with \(\limsup_{n\to\infty}\frac{k}{n}<H_D(X)\), we have
+        \[P_e(\varphi_n)>1-\epsilon \text{ for n sufficiently large}\]
+    \end{itemize}
+    \textbf{Consequence from this theorem:}
+    \[H_D(x) = \inf \{R: R achieveable\}\]
+    where
     
+    \[R\ achieveable \Longleftrightarrow \forall \epsilon>0, \exists \text{ D-ary (k,n) fixed length codes } \varphi_n \text{ such that } \limsup_{n \to \infty}\frac{k}{n}\leq R\]
+    % Why is the converse part different from the strong converse part? weaker cuz the stronger implies the weaker, but not the other way around?
+    %continue this part later
+    \begin{align*}
+        &
+    \end{align*}
 \end{itemize}
+
+
 
 \section{Tutorial Proofs}
 \subsection{Week 2 Tutorial}
