@@ -184,6 +184,11 @@
     \item \textbf{Lecture 9 Definition (Typical Set):} For a DMS \(\{x_i\}^\infty_{i=1}\) with PMF \(P_x\) and entropy \(H(X)\), given integer \(n \geq 1\)
     and \(\epsilon >\) 0, the typical set \(A_\epsilon^{(n)}\) with respect to the source is
     \[A^{(n)}_\epsilon = \{a^n \in \mathcal{X}: |-\frac{1}{n} \log_2 P_{X^n}(a^n) - H(X)|\leq\epsilon\}\]
+    \item \textbf{Lecture 9 Definition (Code block):} Given integers \(D \geq 2\), \(n \geq 1\) and \(k = k(n)\) a \((k,n)\) D-ary Fixed length code \(\varphi\) for a DMS \(\{x_{i}\}^\infty_{i=1}\) with alphabet \(\mathcal{X}\) consists of the following pair of encoding and decoding functions
+    \[\text{Encoding: } f: \mathcal{X}^n \to \{0, 1, \ldots, D-1\}^k\]
+    \[\text{Decoding: } g: \{0, 1, \ldots, D-1\}^k \to \mathcal{X}\]
+    The range of f is called the \(\mathit{codebook}\)
+    \\ The code (or Compression) rate is defined as \(R = \frac{k}{n}\) in D-ary code symbols / Source symbols 
    
 
 \end{itemize}
