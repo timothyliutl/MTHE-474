@@ -173,7 +173,7 @@
 \end{itemize}
 
 \section{Chapter 3 Topics}
-\subsection{Principles of Data Compression}
+\subsection{Principles of Data Compression (Week 4)}
 \subsubsection{Definitions}
 \begin{itemize}
     \item \textbf{Lecture 9 Definition (Discrete Memoryless Source):}
@@ -189,8 +189,12 @@
     \[\text{Decoding: } g: \{0, 1, \ldots, D-1\}^k \to \mathcal{X}\]
     The range of f is called the \(\mathit{codebook}\)
     \\ The code (or Compression) rate is defined as \(R = \frac{k}{n}\) in D-ary code symbols / Source symbols 
-   
-
+   \item \textbf{Lecture 9 Definition (Probability of Decoding Error): } Measures the code's reliability and defined as
+   \[P_e := P(g(f(x^n))) \neq x^n\]
+   Predicament is that we want code to be efficient and reliable (ie code rate as small as possible and probability of error is also as small as possible)
+    \item \textbf{Lecture 9 Definition (Lossless):} A \((k,n)\) D-ary code for the source is called uniquely decodable or lessless if
+    \[f: \mathcal{X}^n \to \{0,1,\ldots, D-1\}\]
+    is an invertable map and \(g = f^{-1}\)
 \end{itemize}
 \subsubsection{Theorems/Lemmas}
 \begin{itemize}
