@@ -194,8 +194,11 @@
     The range of f is called the \(\mathit{codebook}\)
     \\ The code (or Compression) rate is defined as \(R = \frac{k}{n}\) in D-ary code symbols / Source symbols 
    \\
-    \\(Note: \({a,b,c}^n\) denotes the cartesian product of the set \(a,b,c\) n times)
-   \\ K denotes the number of bits in each word rounded UP to the nearest integer
+    \\(Note: \(\{a,b,c\}^k\) denotes the cartesian product of the set \(\{a,b,c\}\) k times)
+   \\ k denotes the length of output source
+   \\ D represents number of code symbols in the code (output) alphabet
+   \\ n represents the length of input source
+   \\ \(|\mathcal{X}|\) represents the number of code symbols in the source (input) alphabet
    
     \item \textbf{Lecture 9 Definition (Probability of Decoding Error): } Measures the code's reliability and defined as
    \[P_e := P(g(f(x^n))) \neq x^n\]
