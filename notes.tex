@@ -181,18 +181,27 @@
 \\ i.d.d property: \(P(X_1 = a_1, \ldots, X_n = a_n) = \prod_{i=1}^n P(X_i=a_i)\)
     \item \textbf{Lecture 9 Definition (Convergence in Probability):} Given sequence \(\{x_i\}^\infty_{i=1}\) of RVs and RV Z,
     \[X_n \xrightarrow[]{n\to\infty} \text{ in probability} \Longleftrightarrow \forall \epsilon > 0, \lim_{n\to\infty} P(|X_n-Z|>\epsilon)=0\]    
+    
     \item \textbf{Lecture 9 Definition (Typical Set):} For a DMS \(\{x_i\}^\infty_{i=1}\) with PMF \(P_x\) and entropy \(H(X)\), given integer \(n \geq 1\)
     and \(\epsilon >\) 0, the typical set \(A_\epsilon^{(n)}\) with respect to the source is
-    \[A^{(n)}_\epsilon = \{a^n \in \mathcal{X}: |-\frac{1}{n} \log_2 P_{X^n}(a^n) - H(X)|\leq\epsilon\}\]
-    \item \textbf{Lecture 9 Definition (Code block):} Given integers \(D \geq 2\), \(n \geq 1\) and \(k = k(n)\) a \((k,n)\) D-ary Fixed length code \(\varphi\) for a DMS \(\{x_{i}\}^\infty_{i=1}\) with alphabet \(\mathcal{X}\) consists of the following pair of encoding and decoding functions
-    \[\text{Encoding: } f: \mathcal{X}^n \to \{0, 1, \ldots, D-1\}^k\]
+    \[A^{(n)}_\epsilon = \{a^n \in \mathcal{X}: \left |-\frac{1}{n} \log_2 P_{X^n}(a^n) - H(X) \right|\leq\epsilon\}\]
+    \[A^{(n)}_\epsilon = \{a^n \in \mathcal{X}: 2^{-n*(H(X) + \epsilon)} \leq P_{X^n}(a^n) \leq 2^{-n*(H(X) - \epsilon)}\]
+
+
+    \item \textbf{Lecture 9 Definition (Code block):} Given integers \(D \geq 2\), \(n \geq 1\) and \(k = k(n)\) (k is a function of n and describes number of symbols in a block)  a \((k,n)\) D-ary Fixed length code \(\rho\) for a DMS \(\{x_{i}\}^\infty_{i=1}\) with alphabet \(\mathcal{X}\) consists of the following pair of encoding and decoding functions
+    \[\text{Encoding: } f: \mathcal{X}^n \to \{0, 1, \ldots, D-1\}^k\] 
     \[\text{Decoding: } g: \{0, 1, \ldots, D-1\}^k \to \mathcal{X}\]
     The range of f is called the \(\mathit{codebook}\)
     \\ The code (or Compression) rate is defined as \(R = \frac{k}{n}\) in D-ary code symbols / Source symbols 
-   \item \textbf{Lecture 9 Definition (Probability of Decoding Error): } Measures the code's reliability and defined as
+   \\
+    \\(Note: \({a,b,c}^n\) denotes the cartesian product of the set \(a,b,c\) n times)
+   \\ K denotes the number of bits in each word rounded UP to the nearest integer
+   
+    \item \textbf{Lecture 9 Definition (Probability of Decoding Error): } Measures the code's reliability and defined as
    \[P_e := P(g(f(x^n))) \neq x^n\]
    Predicament is that we want code to be efficient and reliable (ie code rate as small as possible and probability of error is also as small as possible)
-    \item \textbf{Lecture 9 Definition (Lossless):} A \((k,n)\) D-ary code for the source is called uniquely decodable or lessless if
+   
+   \item \textbf{Lecture 9 Definition (Lossless):} A \((k,n)\) D-ary code for the source is called uniquely decodable or lessless if
     \[f: \mathcal{X}^n \to \{0,1,\ldots, D-1\}\]
     is an invertable map and \(g = f^{-1}\)
 \end{itemize}
@@ -209,22 +218,22 @@
         \item \(|A_\epsilon^{(n)}| \leq 2^{n(H(X)+\epsilon)}\) Where \(|A|\) is the size of set A
         \item \(|A_\epsilon^{(n)}| \geq (1-\epsilon)2^{n(H(X)-\epsilon)}\) for \(n\) sufficiently large
     \end{itemize}
-    \item \textbf{Lecture 10 Theorem (Shannon's Fixed-length lossless source coding theorem for DMS):} For integer \(D\leq2\), consider a DMS \(\{x_i\}^{\infty}_{i=i}\) with alphabet \(\mathcal{X}\), PMF \(P_x\) and
+    \item \textbf{Lecture 10 Theorem (Shannon's Fixed-length lossless source coding theorem for DMS):} For integer \(D\leq2\), consider a DMS \(\{x_i\}^{\infty}_{i=i}\) with alphabet \(\mathcal{X}\), PMF \(P_x\), \\and
     source entropy \(H_D(X) = - \sum_{a \in \mathcal{X}} P_X(a) \log_D P_X(a)\) then the following hold:
     \begin{itemize}
-        \item (i.\ forward part) \(\forall \epsilon \in (0,1)\) and \(0<\delta<\epsilon\), \(\exists\) a sequences of D-ary (k,n) fixed length codes \(\varphi_n\) such that,
+        \item (i.\ forward part) \(\forall \epsilon \in (0,1)\) and \(0<\delta<\epsilon\), \(\exists\) a sequences of D-ary (k,n) fixed length codes \(\rho_n\) such that,
         \[\limsup_{n\to\infty}\frac{k}{n} \leq H_d(x) + \delta\] 
         \[\text{ and } \]
-        \[P_e(\varphi_n)< \epsilon \text{ for n sufficiently large}\]
+        \[P_e(\rho_n)< \epsilon \text{ for n sufficiently large}\]
         
-        \item (ii.\ strong converse part) \(\forall \epsilon \in (0,1)\) and any sequence of D-ary (k,n) fixed-length codes \(\varphi_n\) for the source\\ with \(\limsup_{n\to\infty}\frac{k}{n}<H_D(X)\), we have
-        \[P_e(\varphi_n)>1-\epsilon \text{ for n sufficiently large}\]
+        \item (ii.\ strong converse part) \(\forall \epsilon \in (0,1)\) and any sequence of D-ary (k,n) fixed-length codes \(\rho_n\) for the source with \(\limsup_{n\to\infty}\frac{k}{n}<H_D(X)\), we have
+        \[P_e(\rho_n)>1-\epsilon \text{ for n sufficiently large}\]
     \end{itemize}
     \textbf{Consequence from this theorem:}
     \[H_D(x) = \inf \{R: R achieveable\}\]
     where
     
-    \[R\ achieveable \Longleftrightarrow \forall \epsilon>0, \exists \text{ D-ary (k,n) fixed length codes } \varphi_n \text{ such that } \limsup_{n \to \infty}\frac{k}{n}\leq R\]
+    \[R\ achieveable \Longleftrightarrow \forall \epsilon>0, \exists \text{ D-ary (k,n) fixed length codes } \rho_n \text{ such that } \limsup_{n \to \infty}\frac{k}{n}\leq R\]
     % Why is the converse part different from the strong converse part? weaker cuz the stronger implies the weaker, but not the other way around?
     %continue this part later
     \begin{align*}
@@ -244,7 +253,9 @@
 \end{itemize}
 \subsection{Week 3 Tutorial}
 
+% Random helpful links
 % https://math.stackexchange.com/questions/4531722/simplifying-entropy-hx-y-xy
+% https://pysdr.org/content/channel_coding.html
 
 
 \end{document}
