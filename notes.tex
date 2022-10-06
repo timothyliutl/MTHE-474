@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 \usepackage{wasysym}
 \usepackage{geometry}
+
 \geometry{
  a4paper,
  total={170mm,257mm},
@@ -195,6 +196,7 @@
     \\ The code (or Compression) rate is defined as \(R = \frac{k}{n}\) in D-ary code symbols / Source symbols 
    \\
     \\(Note: \(\{a,b,c\}^k\) denotes the cartesian product of the set \(\{a,b,c\}\) k times)
+    \\
    \\ k denotes the length of output source
    \\ D represents number of code symbols in the code (output) alphabet
    \\ n represents the length of input source
@@ -233,14 +235,15 @@
         \[P_e(\rho_n)>1-\epsilon \text{ for n sufficiently large}\]
     \end{itemize}
     \textbf{Consequence from this theorem:}
-    \[H_D(x) = \inf \{R: R achieveable\}\]
+    \[H_D(x) = \inf \{R: \text{R achieveable}\}\]
     where
     
-    \[R\ achieveable \Longleftrightarrow \forall \epsilon>0, \exists \text{ D-ary (k,n) fixed length codes } \rho_n \text{ such that } \limsup_{n \to \infty}\frac{k}{n}\leq R\]
+
     % Why is the converse part different from the strong converse part? weaker cuz the stronger implies the weaker, but not the other way around?
     %continue this part later
     \begin{align*}
-        &
+        \text{R achieveable} \Longleftrightarrow & \forall \epsilon>0, \exists \text{ D-ary (k,n) fixed length codes } \rho_n \text{ such that } \limsup_{n \to\infty}\frac{k}{n}\leq R \\
+         & \text{ and } P_e(\rho_n)<\epsilon \text{ for n sufficiently large}
     \end{align*}
 \end{itemize}
 
