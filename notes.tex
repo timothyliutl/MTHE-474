@@ -268,8 +268,23 @@
     \[P(X_i=a_i|X^{i-1} = a^{i-1}) =P(X_i=a_i|X_{i-1} = a_{i-1}, \ldots, X_{i-M} = a_{i-M})\]
     \(\forall i>M, a^i \in \mathcal{X}^i\)
     \\ \\ (current state is dependent on the previous M states)
+    \item \textbf{Lecture 11 Definition (Various Notations):}
+    \begin{itemize}
+        \item For a markov chain \(\{X_i\}^\infty_{i=1}\), \(X_i\) is called the state of the MC at time i
+        \item A markov chain \(\{X_i\}^\infty_{i=1}\) is called \textit{time-invarient} or \textit{homogeneous} if its conditional PMFs \(P_{X_i|X_{i-1}}\) is not dependent on time i
+        \\ ie: \(P(X_i = b| X_{i-1} = a) = P(X_2=b|X_1=a)\)  \(\forall i\geq 2, \forall a,b \in \mathcal{X}\)
+    \end{itemize}
+    \item \textbf{Lecture 11 Definition (Irreducible):} a MC is called \textit{irreducible} if one can go from any state value in \(\mathcal{X}\) to any other state value in \(\mathcal{X}\) in a finite number of transitions with positive probabilities. (ie: no closed loops)
+    \item \textbf{Lecture 11 Definition (Stationary Distribution):} For a MC with alphabet \(\mathcal{X}\) of size \(|\mathcal{X}|=M\) and transition matrix Q (of size \(M \times M\)), a distribution \(\Pi\) on \(\mathcal{X}\) is called a \textit{stationary distribution}
+    for the MC if \(\forall a \in \mathcal{X},\)
+    \[\Pi (a) = \sum_{b \in \mathcal{X}} \Pi(b) P_{ab}\]
+    \\ where \(P_{ab}\) is the (a,b) element in the transition probability matrix and is equal to \(P_{X_2|X_1}(b|a)\)
 
     
+\end{itemize}
+\subsubsection{Theorems/Lemmas}
+\begin{itemize}
+    \item \textbf{Lecture 11 Lemma (Lemma 3):}
 \end{itemize}
 
 
@@ -287,6 +302,7 @@
 % Random helpful links
 % https://math.stackexchange.com/questions/4531722/simplifying-entropy-hx-y-xy
 % https://pysdr.org/content/channel_coding.html
+% https://math.stackexchange.com/questions/4547648/prove-ab-log-2ab-leq-a-log-2a-b-log-2b
 
 
 \end{document}
