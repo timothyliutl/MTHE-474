@@ -22,7 +22,7 @@
 \tableofcontents
 
 \newpage
-\section{Chapter 2 Topics}
+\section{Information Measures (Weeks 1-3)}
 \subsection{Information Measures for Discrete Systems}
 \subsubsection{Definitions}
 \begin{flushleft}
@@ -284,9 +284,20 @@
 \end{itemize}
 \subsubsection{Theorems/Lemmas}
 \begin{itemize}
-    \item \textbf{Lecture 11 Lemma (Lemma 3):}
+    \item \textbf{Lecture 11 Lemma (Lemma 3):} If a time-invariant MC is identically distributed then it is a stationary process
+    \item \textbf{Lecture 11 Lemma (Lemma 4):}  If a time-invariant MC has its initial probability distribution \(P_{X_1}\) given by the chain's stationary distribution \(\Pi\), then the MC is a \textit{Stationary Process}
 \end{itemize}
 
+\subsection{Entropy Rates and Data Compression (Week 5)}
+\subsubsection{Definitions}
+\begin{itemize}
+    \item \textbf{Lecture 12 Definition (Entropy Rate):} For a source \(\{X_i\}^\infty_{i=1}\) with alphabet \(\mathcal{X}\) the entropy rate is denoted by \(H(\mathcal{X})\) and defined as
+    \[H(\mathcal{X}) := \lim_{n \to \infty} \frac{1}{n} H(X_1, \ldots, X_n)\]
+\end{itemize}
+\subsubsection{Theorems/Lemmas}
+\begin{itemize}
+    \item \textbf{Lecture 12 Lemma (Lemma 1): } For a stationary source \(\{X_i\}^\infty_{i=1}\), the sequence of conditional entropies \(\{H(X_i|X^{i-1})\}^\infty_{i=1}\) is decreasing in i and has a limit denoted by \(\widetilde{H} (\mathcal{X})\)
+\end{itemize}
 
 
 \section{Tutorial Proofs}
