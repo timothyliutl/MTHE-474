@@ -256,7 +256,7 @@
 \subsection{Sources with Memory and Markov Chains (Weeks 4 and 5)}
 \subsubsection{Definitions}
 \begin{itemize}
-    \item \textbf{Lecture 11 Definition (Markov chain and process):} A DMS \(\{X_i\}_{i=1}^\infty\) with finite alphabet \(\mathcal{X}\) is called a markov chain on markov process if \(\forall i = 1, 2, \ldots\)
+    \item \textbf{Lecture 11 Definition (Markov chain and process):} A source \(\{X_i\}_{i=1}^\infty\) with finite alphabet \(\mathcal{X}\) is called a markov chain on markov process if \(\forall i = 1, 2, \ldots\)
     \[P(X_i=a_i | X^{i-1} = a^{i-1}) = P(X_i = a_i | X_{i-1} = a_{i-1})\]
     \\ \(\forall a^i = (a_1, \ldots, a_{i-1}) \in \mathcal{X}^i\)
     \\ \\
@@ -304,7 +304,14 @@
         \item \(\rho_D = \log_2 |\mathcal{X}| - H(X_1)\)
         \item \(\rho_M = H(X_1) - H(\mathcal{X})\)
     \end{itemize}
-    
+    \item \textbf{Lecture 13 Definition (Variable length code): } Given a discrete source \(\{X_i\}^\infty_{i=1}\) with alphabet \(\mathcal{X}\) and given a D-ary code alphabet \(B = \{0,1,\ldots, D-1\}\), \(D \geq 2\) fixed integer, a \textit{D-ary n-th order variable-length code (VLC)} for the source is a map
+    \[f: \mathcal{X}^n \to B^*\]
+    (Maps n-tuples to D-ary code words of variable lengths)
+    \\ \\Where  \(B^* = \text{set of all finite-length strings from B}\): (another way of saying this) \\ \(c \in B^* \Leftrightarrow \exists \text{integer } l\geq1 \text{ such that } c \in B^l \)
+    \item \textbf{Lecture 13 Definition (Code book): } The codebook \(\rho\) (abuse of notation) of the VLC is the set of all codewords:
+    \[\rho = f(\mathcal{X}^n) = \{f(x^n) \in B^* : x^n \in \mathcal{X}^n\}\]
+    \item \textbf{Lecture 13 Definition (uniquely decodeable/lossless):} A VLC is \textit{Lossless} if all finite sequences of source n-tuples are mapped \textit{onto} (1 to 1 map) distinct sequences of codewords
+    \item \textbf{Lecture 13 Definition (Average code rate): }
 \end{itemize}
 \subsubsection{Theorems/Lemmas}
 \begin{itemize}
