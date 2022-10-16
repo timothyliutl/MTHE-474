@@ -293,11 +293,28 @@
 \begin{itemize}
     \item \textbf{Lecture 12 Definition (Entropy Rate):} For a source \(\{X_i\}^\infty_{i=1}\) with alphabet \(\mathcal{X}\) the entropy rate is denoted by \(H(\mathcal{X})\) and defined as
     \[H(\mathcal{X}) := \lim_{n \to \infty} \frac{1}{n} H(X_1, \ldots, X_n)\]
+    \item \textbf{Lecture 12 Definition (Total redundancy for stationary ergodic source): } Redundancy is the amount of useless information that can be elliminated with fixed-length data compression codes.
+    For a stationary ergodic source, its total redundancy \(\rho_T\) is defined as follows
+    \[\rho_t := \log_2 |\mathcal{X}| - H(\mathcal{X})\]
+    \\ \\
+    There are 2 types of redundancies. \(\rho_D\) is the redundancy due to \textit{Source's non-uniform marginal PMF}. \(\rho_M\) is the redundancy due to \textit{Source memory}. The definitions are as follows.
+
+    \begin{itemize}
+        \item \(\rho_T = \rho_D + \rho_M\)
+        \item \(\rho_D = \log_2 |\mathcal{X}| - H(X_1)\)
+        \item \(\rho_M = H(X_1) - H(\mathcal{X})\)
+    \end{itemize}
+    
 \end{itemize}
 \subsubsection{Theorems/Lemmas}
 \begin{itemize}
-    \item \textbf{Lecture 12 Lemma (Lemma 1): } For a stationary source \(\{X_i\}^\infty_{i=1}\), the sequence of conditional entropies \(\{H(X_i|X^{i-1})\}^\infty_{i=1}\) is decreasing in i and has a limit denoted by \(\widetilde{H} (\mathcal{X})\)
+    \item \textbf{Lecture 12 Lemma (Lemma 1): } For a \textit{stationary source} \(\{X_i\}^\infty_{i=1}\), the sequence of conditionary entropies \(\{H(X_i|X^{i-1})_{i=1}^\infty\}\) is decreased in \(i\) and has a limit denoted by
+    \[\tilde{H}(\mathcal{X}) := \lim_{i \to \infty} H(X_i | X^{i-1})\]
+    \item \textbf{Lecture 12 Lemma (Lemma 2/Cesaro Mean theorem): } If \(a_n \to a\) as \(n \to \infty\) and \(b_n = \frac{1}{n} \sum_{i=1}^{n}a_i\), then \(b_n \to a\) as \(n \to \infty\) % TODO: Why is this useful
+    \item \textbf{Lecture 12 Theorem (Entropy rate of stationary sources): } For a \textit{Stationary Source} \(\{X_i\}_{i=1}^\infty\), its entropy rate \(H(\mathcal{X})\) always exists and is equal to \(\tilde{H}(\mathcal{X})\) (See Lecture 12 Lemma 1)
+
 \end{itemize}
+
 
 
 \section{Tutorial Proofs}
