@@ -323,7 +323,17 @@
     \item \textbf{Lecture 13 Definition (Code book): } The codebook \(\rho\) (abuse of notation) of the VLC is the set of all codewords:
     \[\rho = f(\mathcal{X}^n) = \{f(x^n) \in B^* : x^n \in \mathcal{X}^n\}\]
     \item \textbf{Lecture 13 Definition (uniquely decodeable/lossless):} A VLC is \textit{Lossless} if all finite sequences of source n-tuples are mapped \textit{onto} (1 to 1 map) distinct sequences of codewords
-    \item \textbf{Lecture 13 Definition (Average code rate): } 
+    \item \textbf{Lecture 13 Definition (Average code rate): } Let \(\rho\) be a D-ary n-th order VLC \\ \(f: \mathcal{X}^n \to \{0,1,\ldots, D-1\}^*\)for a discrete source \(\{X_i\}_{i=1}^\infty\) with alphabet \(\mathcal{X}\) and joint PMFs \(\{P_{X^n}\}\) and let \(l(C_{X^n})\) denote the length of the codeword \(C_{X^n}:=f(x^n)\)
+    associated with source n-tuple \(x^n \in \mathcal{X}^n\)
+    \\
+    \\
+    Then the \textit{Average code word length for \(\rho\)} is given by
+    \[\overline{l} := E[l(c_{X^n})] = \sum_{x^n \in \mathcal{X}^n} P_{X^n}(x^n) l(c_{x^n})\]
+    \\
+    \\ and its \textit{Average code rate} is given by 
+    \[\overline{R}:=\frac{\overline{l}}{n}\]
+    \item \textbf{Lecture 13 Definition (Prefix Code): } A \textit{Prefix code} is a VLC for which none of its codewords is a prefix of another codeword
+
 \end{itemize}
 \subsubsection{Theorems/Lemmas}
 
