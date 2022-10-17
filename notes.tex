@@ -333,9 +333,20 @@
     \\ and its \textit{Average code rate} is given by 
     \[\overline{R}:=\frac{\overline{l}}{n}\]
     \item \textbf{Lecture 13 Definition (Prefix Code): } A \textit{Prefix code} is a VLC for which none of its codewords is a prefix of another codeword
-
+    \item \textbf{Lecture 14 Definition (Kraft Inequality): } A set of positive integers \(\{l_1, l_2, \ldots, l_M\}\) satisfies \textit{the kraft inequality with base D} (Where D is an integer \(\geq 2\)) if 
+    \[\sum_{i=1}^{M} D^{l_i} \leq 1\]
 \end{itemize}
 \subsubsection{Theorems/Lemmas}
+\begin{itemize}
+    \item \textbf{Lecture 14 Theorem (Kraft Inequality for Lossless VLCs): } Let \(\rho\) be a UD (Lossless) D-ary n-th order VLC for a discrete source \(\{X_i\}^\infty_{i=1}\) with alphabet \(\mathcal{X}\) and let \(l_1, l_2, \ldots, l_M\) be the length of the code's
+    \(M = |\mathcal{X}|^n\) codewords. Then these codeword lengths satisfy the kraft inequality with base D.
+    \item \textbf{Lecture 14 Theorem (Kraft Inequality for Prefix VLCs): } 2 parts to this theorem
+    \begin{itemize}
+        \item \textbf{Forward Part:} \textit{Every} D-ary n-th order prefix VLC for a discrete source \(\{X_i\}^\infty_{i=1}\) of alphabet \(\mathcal{X}\) has \(M = |\mathcal{X}|^n\) codeword lengths
+        \(l_1, l_2, \ldots, l_M\) \textit{Satisfying the Kraft Inequality of base D}
+        \item \textbf{Converse Part: } Given a set \(\{l_1, l_2, \ldots, l_M\}\) of \(M=|\mathcal{X}|^n\) positive integersthat satisfy the \textit{Kraft Inequality of base D}, \textit{there Exists a D-ary n-th order prefix VLC} for the source with codeword lengths \(l_1, l_2, \ldots, l_M\)
+    \end{itemize}
+\end{itemize}
 
 
 \section{Tutorial Proofs}
