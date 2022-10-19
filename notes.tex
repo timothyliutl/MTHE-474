@@ -346,6 +346,43 @@
         \(l_1, l_2, \ldots, l_M\) \textit{Satisfying the Kraft Inequality of base D}
         \item \textbf{Converse Part: } Given a set \(\{l_1, l_2, \ldots, l_M\}\) of \(M=|\mathcal{X}|^n\) positive integersthat satisfy the \textit{Kraft Inequality of base D}, \textit{there Exists a D-ary n-th order prefix VLC} for the source with codeword lengths \(l_1, l_2, \ldots, l_M\)
     \end{itemize}
+    \item \textbf{Lecture 15 Theorem (Lossless VLC for DMS): } Given integer \(D \geq 2\), consider a DMS \(\{X_i\}^\infty_{i=1}\) with alphabet \(\mathcal{X}\) PMF \(P_X\)
+    and source entropy \(H_D(X) = - \sum_{a\in \mathcal{X}} P_X(a) \log_D (P_X(a))\). Then the following hold:
+    \begin{itemize}
+        \item \textbf{Forward Part (Achievability):} For any \(\epsilon \in (0,1), \exists\) a sequence of \textit{D-ary n-th order prefix VLCs}
+        \[f_n : \mathcal{X}^n \to \{0,1,\ldots, D-1\}^*\]
+        for the source with average code rate satisfying
+        \[\overline{R_n} < H_D(X) + \epsilon\]
+        for n sufficiently large
+        \item \textbf{Converse Part:} Every D-ary n-th order UD VLC
+        \[f_n : \mathcal{X}^n \to \{0,1,\ldots, D-1\}^*\]
+        for the source has an average code rate
+        \[\overline{R_n} \geq H_D(X)\]
+    \end{itemize}
+    \textbf{Corollary:} For any \(n \leq 1\), \(\exists\) a D-ary n-th order \textit{prefix code}
+    \[f: \mathcal{X}^n \to \{0,1,\ldots, D-1\}^*\]
+    for a DMS \(\{X_i\}^\infty_{i=1}\) with alphabet \(\mathcal{X}\) with average code rate
+    \[H_D(X) \leq \overline{R_n} < H_D(X) + \frac{1}{n}\]
+
+    \item \textbf{Lecture 15 Theorem (Lossless VLC for stationary sources): } Given integer \(D \leq 2\), consider a \textit{Stationary Source} \(\{X_i\}^\infty_{i=1}\) with alphabet \(\mathcal{X}\)
+    and source \textit{entropy rate} \(H_D(\mathcal{X}) = \lim_{n\to\infty} \frac{1}{n} H_D(X^n)\), then the following results hold
+    \begin{itemize}
+        \item \textbf{Forward Part (Achievability):} For any \(\epsilon \in (0,1)\), there exists a sequence of D-ary n-th order prefix VLCs
+        \[f_n: \mathcal{X}^n \to \{0,1,\ldots, D-1\}^*\]
+        for the source with average code rate satisfying 
+        \[\overline{R_n} < H_D(\mathcal{X} + \epsilon)\]
+        for n sufficiently large
+
+        \item \textbf{Converse Part:} Every D-ary n-th order UD VLC
+        \[ f_n: \mathcal{X}^n \to \{0,1,\ldots, D-1\}^*\]
+        for the source as an average code rate
+        \[\overline{R_n} \geq H_D(\mathcal{X})\]
+    \end{itemize}
+    \textbf{Corallory:} For any n \(\geq 1, \exists\)  a D-ary n-t order prefix code
+    \[f: \mathcal{X}^n \to \{0,1,\ldots, D-1\}^*\]
+    for a \textit{stationary source} \(\{X_i\}^\infty_{i=1}\) with alphabet \(\mathcal{X}\) with average code rate
+    \[\frac{H_D(X^n)}{n} \leq \overline{R_n} < \frac{H_D(X^n)}{n} + \frac{1}{n}\]
+    Therefore as \(n \to \infty\), \(\overline{R_n} \to H(\mathcal{X})\)
 \end{itemize}
 
 
