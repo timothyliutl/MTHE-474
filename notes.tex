@@ -399,7 +399,17 @@
     \[\text{ie: } \overline{l}_n(\mathcal{C}) \leq \overline{l}_n(\mathcal{C}_p) \ \ \  \forall \text{ prefix codes } \mathcal{C}_p\]
     Then \(\mathcal{C}\) is also optimal within the entire class of UD codes
     \[\text{ie: } \overline{l}_n(\mathcal{C}) \leq \overline{l}_n(\hat{\mathcal{C}}) \ \ \  \forall \text{ UD codes } \hat{\mathcal{C}}\]
-    \item \textbf{Lecture 16 Theorem (Necessary conditions for optimal binary prefix codes): } Let \(\mathcal{C}\) be an \textit{optimal} binary prefix code with %write this out later
+    \item \textbf{Lecture 16 Theorem (Necessary conditions for optimal binary prefix codes): } Let \(\mathcal{C}\) be an \textit{optimal} binary prefix code with codeword lengths \(l_i\) for \(i = 1, \ldots, M\) for source \(\{X_i\}^\infty_{i=1}\) with alphabet \(\mathcal{X} = \{a_1,\ldots, a_M\}\) and symbol probabilities \(p_1, \ldots, p_M\) \((M = |\mathcal{X}|)\).
+    Without Loss of Generality, assume \(P_1 \geq P_2 \geq \ldots \geq P_M\) and that any group of source symbols with the same probability is arranged in the order of increasing lengths:
+    \[\text{ie: if } P_i= P_{i+1} = \ldots = P_{i+s} \text{ then } l_i \leq \ldots \leq l_{i+s}\]
+    Then the following properties hold,
+    \begin{itemize}
+        \item Higher probabilities have shorter codewords
+        \[P_j > P_k \Rightarrow l_j \leq l_k\] 
+        \item The two least probable source symbols have codewords of equal lengths
+        \[l_{M-1} = l_{M}\]
+        \item Among the codewords of length \(l_M\), two of them are identical except in the last digit
+    \end{itemize}
 
 \end{itemize}
 
