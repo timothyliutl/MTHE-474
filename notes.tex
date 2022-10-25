@@ -413,6 +413,34 @@
 
 \end{itemize}
 
+\subsection{Huffman Code Week 6 - 7}
+\subsubsection{Observations}
+\begin{itemize}
+    \item \textbf{Goal of Huffman Codes:} Given a source with alphabet \(\mathcal{X} = \{a_1, \ldots, a_M\}\) with source symbol probabilities \(P_1\geq P_2 \geq \cdots \geq P_M\), we want to find
+    \((l_1^*, l_2^*, \ldots, l_M^*)\) that minimize
+    \[\sum_{i=1}^M P_i l_i\]
+    over all choices of \((l_1^*, l_2^*, \ldots, l_M^*)\) that \textit{that satisfy kraft's inequality}
+    \item Huffman codes are not unique. We can have different huffman codes for the same source (ie by resolving ties differently in the algorithm). Regardless of the result, all huffman codes still have the same minimal \(\overline{R}\)
+\end{itemize}
+\subsubsection{Definition}
+\subsubsection{Theorems/Lemma}
+\begin{itemize}
+    \item \textbf{Lecture 17 Lemma (Huffman): } Consider a source with alphabet \(\mathcal{X} = \{a_1, \ldots, a_M\}\) with source symbol probabilities \(P_1\geq P_2 \geq \cdots \geq P_M\). Consider the reduced source with alphabet \(\mathcal{Y}\) obtained from \(\mathcal{X}\)
+    \textit{by combining the two least likely source symbols} \(a_{M-1}\) and \(a_M\) into \textit{an equivalent symbol} \(a_{M-1, M}\) with probability \(P_{M-1} + P_M\):
+    \[\mathcal{Y} = \{a_1, a_2, \ldots, a_{M-2}, a_{M-1, M}\}\]
+    Let \(\mathcal{C}_2\) given by \(f_2: y \to \{0,1\}^*\) be an optimal code for the reduced source. Now, construct a code \(C_1\), \(f_1: \mathcal{X} \to \{0,1\}^*\), for the original source \(\mathcal{X}\) as follows:
+    \begin{itemize}
+        \item The codewords for symbols \(a_1, a_2, \ldots, a_{M-2}\) are exactly the same as the corresponding codewords in \(\mathcal{C}_2\)
+        \item The codewords for symbols \(a_{M-1}, a_M\) are formed by appending a ''0'' and ''1'', respectively, to the codeword \(f_2(a_{M-1,M})\) in \(\mathcal{C}_2\) for symbol \(a_{M-1,M}\)
+    \end{itemize}
+    Then we have that \(\mathcal{C}_1\) is an \textit{optimal prefix code} for the original source \(\mathcal{X}\)
+    \\ \\ Alternatively this lemma is summed up in the \textit{Huffman Algorithm}. This works for Binary codes, but may not work for D-ary codes for \(D>2\)
+    \item \textbf{Lecture 18 kinda lemma but not really (Non-binary Huffman Codes): } If a code alphabet size is non-binary (ie: \(D>2\)), the initial size of \(|\mathcal{X}|\) may be insufficient to ensure we are left with a reduced source of size D.
+    This is because in each stage of the huffman algorithm the source size is reduced by \(D-1\), which in the binary case is 1. There for we need the initial number of elements in the source to be equal to
+    \[D + s*(D-1)\]
+    for some integer \(s\geq0\)
+\end{itemize}
+
 
 \section{Tutorial Proofs}
 \subsection{Week 2 Tutorial}
