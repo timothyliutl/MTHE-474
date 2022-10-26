@@ -4,6 +4,11 @@
 \usepackage{amssymb}
 \usepackage{wasysym}
 \usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+\usepackage{varwidth}
+\tikzstyle{block} = [draw, rectangle, minimum height=3em, minimum width=3em]
+
 
 \geometry{
  a4paper,
@@ -439,6 +444,31 @@
     This is because in each stage of the huffman algorithm the source size is reduced by \(D-1\), which in the binary case is 1. There for we need the initial number of elements in the source to be equal to
     \[D + s*(D-1)\]
     for some integer \(s\geq0\)
+\end{itemize}
+
+\section{Fundamentals of Channel Coding}
+\subsection{Discrete Memoryless Channels}
+\subsubsection{Observations}
+\begin{itemize}
+    \item A general communication system (with no feedback) can be depicted with the following diagram
+    \\ \\
+    
+    \begin{tikzpicture}
+        \node [block] (first) {
+            Channel Encoder
+        };
+        \node [block] [right = 2cm of first] (second) {
+            Channel \(P_{Y^n|X^n}\)
+        };
+        \node [block] [right = 2cm of second] (third) {
+            Channel Decoder
+        };
+
+        \draw[->, line width = 0.5mm] (first) -- (second) node [pos=0.5, above]{\(X^n\)} node [pos=0.5, below]{Code Word};
+        \draw[->, line width = 0.5mm] (second) -- (third) node [pos=0.5, above]{\(Y^n\)} node [pos=0.5, below, align=center]{Recieved \\ Word};
+        \draw[->, line width = 0.5mm] +(-3cm, 0) -- (first) node [pos=0.5, above]{W} node [pos=0.5, below]{Message};
+        \draw[->, line width = 0.5mm] (third) -- +(4cm, 0) node [pos=0.5, above]{\(\hat{W}\)} node [pos=0.5, below, align=center]{Reconstructed\\Message};
+    \end{tikzpicture}
 \end{itemize}
 
 
