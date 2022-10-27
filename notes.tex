@@ -471,6 +471,40 @@
     \end{tikzpicture}
 \end{itemize}
 
+\subsubsection{Definitions}
+\begin{itemize}
+    \item \textbf{Lecture 19 Definition (Discrete Communication Channel): } A discrete communication channel is a triplet
+    \[(\mathcal{X}, y, \{P_{Y^n|X^n}\}^\infty_{n=1})\]
+    with the following:
+    \begin{itemize}
+        \item a finite \textit{input} alphabet \(\mathcal{X}\)
+        \item a finite \textit{output} alphabet \(\mathcal{Y}\)
+        \item a sequence of n-dimensional transition distributions
+    \end{itemize}
+    \[P_{Y^n|X^n}(b^n|a^n) := P[Y^n=b^n|X^n=a^n]\]
+    for \(n\geq1, a^n = (a_1, \ldots, a_n)\in \mathcal{X}^n, b^n = (b_1, \ldots, b_n)\in y^n\), such that \[\sum_{b^n \in y^n} P_{Y^n|X^n} (b^n|a^n) = 1  \ \ \forall a^n \in \mathcal{X}^n\]
+
+    \item \textbf{Lecture 19 Definition (Discrete memoryless channel):} A discrete channel whose sequence of n-dimensional transition distributions satisfy
+    \[P_{Y^n|X^n}(b^n|a^n) = \prod_{i=1}^n P_{Y|X}(b_i|a_i)\]
+    \(\forall n \geq 1, a^n \in \mathcal{X}^n, b^n \in \mathcal{Y}^n\) 
+
+    \item \textbf{ Lecture 19 Definition (Information Capacity): } Given a DMC \((\mathcal{X}, \mathcal{Y}, Q=[P_{xy}])\), its information capacity C is defined as:
+    \[C = \max_{P_X} I(X;Y)\]
+    where maximization is over all possible input distributions \(P_X\)
+\end{itemize}
+% What does consistent mean??? why is this assumption important?
+
+\subsubsection{Theorems/Lemmas}
+\begin{itemize}
+    \item \textbf{Lecture 19 Lemma: } The DMC property, 
+    \[P_{Y^n|X^n}(b^n|a^n) := P[Y^n=b^n|X^n=a^n]\]
+    is equivalent to the following conditions
+    \begin{itemize}
+        \item \(P_{Y_n|X^n, Y^{n-1}} (b_n|a_n, b^{n-1}) = P_{Y|X} (b_n|a_n) \ \ \forall n \geq 1, a^n \in \mathcal{X}^n, b^n \in \mathcal{Y}^n\)
+        \item \(P_{Y^{n-1}|X^n}(b^{n-1}|a^n) = P_{Y^{n-1}|X^{n-1}} (b^{n-1}|a^{n-1}) \ \ \forall n \geq 2, a^n \in \mathcal{X}^n, b^{n-1} \in \mathcal{Y}^{n-1}\)
+    \end{itemize}
+
+\end{itemize}
 
 \section{Tutorial Proofs}
 \subsection{Week 2 Tutorial}
