@@ -491,6 +491,9 @@
     \item \textbf{ Lecture 19 Definition (Information Capacity): } Given a DMC \((\mathcal{X}, \mathcal{Y}, Q=[P_{xy}])\), its information capacity C is defined as:
     \[C = \max_{P_X} I(X;Y)\]
     where maximization is over all possible input distributions \(P_X\)
+    \item \textbf{Lecture 20 Definition (Symmetric Channels): } A DMC \((\mathcal{X}, \mathcal{Y}, Q=[P_{xy}])\) is called \textit{symmetric} if the rows of Q are permutations of each other and the columns of Q are permutations of each other
+    \item \textbf{Lecture 20 Definition (Weakly symmetric channels): } A DMC  \((\mathcal{X}, \mathcal{Y}, Q=[P_{xy}])\) is called \textit{weakly symmetric} if the rows of Q are permutations of each other and all columns sums in Q are equal
+    
 \end{itemize}
 % What does consistent mean??? why is this assumption important?
 
@@ -498,11 +501,15 @@
 \begin{itemize}
     \item \textbf{Lecture 19 Lemma: } The DMC property, 
     \[P_{Y^n|X^n}(b^n|a^n) := P[Y^n=b^n|X^n=a^n]\]
-    is equivalent to the following conditions
+    is equivalent to the following conditions (Both need to be true in order to go backwards)
     \begin{itemize}
         \item \(P_{Y_n|X^n, Y^{n-1}} (b_n|a_n, b^{n-1}) = P_{Y|X} (b_n|a_n) \ \ \forall n \geq 1, a^n \in \mathcal{X}^n, b^n \in \mathcal{Y}^n\)
         \item \(P_{Y^{n-1}|X^n}(b^{n-1}|a^n) = P_{Y^{n-1}|X^{n-1}} (b^{n-1}|a^{n-1}) \ \ \forall n \geq 2, a^n \in \mathcal{X}^n, b^{n-1} \in \mathcal{Y}^{n-1}\)
     \end{itemize}
+    \item \textbf{Lecture 20 Lemma: (Information Capacity of weakly symmetric channels): }
+    For a \textit{weakly symmetric} DMC \((\mathcal{X}, \mathcal{Y}, Q)\), its information capacity is acheived by a \textit{uniform input distribution} and is given by
+    \[C = \log_2|\mathcal{Y}| - H(q_1, q_2, \ldots, q_{|\mathcal{Y}|})\]
+    where \((q_1, q_2, \ldots, q_{|\mathcal{Y}|})\) is any row from Q
 
 \end{itemize}
 
