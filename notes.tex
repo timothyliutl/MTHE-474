@@ -493,6 +493,12 @@
     where maximization is over all possible input distributions \(P_X\)
     \item \textbf{Lecture 20 Definition (Symmetric Channels): } A DMC \((\mathcal{X}, \mathcal{Y}, Q=[P_{xy}])\) is called \textit{symmetric} if the rows of Q are permutations of each other and the columns of Q are permutations of each other
     \item \textbf{Lecture 20 Definition (Weakly symmetric channels): } A DMC  \((\mathcal{X}, \mathcal{Y}, Q=[P_{xy}])\) is called \textit{weakly symmetric} if the rows of Q are permutations of each other and all columns sums in Q are equal
+    \item \textbf{Lecture 20 Definition (Quasi-Symmetric Channel): } A DMC \((\mathcal{X}, \mathcal{Y}, Q=[P_{xy}])\) is called \textit{quasi-symmetric} if Q can be partitioned along its columns into \textit{weakly symmetric} sub-matricies \(Q_1, \ldots, Q_m\) for some integer \(m \geq 1\) where each sub-matrix \(Q_i\) has size \(|\mathcal{X}| \times |\mathcal{Y}|\) where i = \(1, \ldots, m\)
+    with 
+    \[y_1 \cup y_2 \cup \cdots \cup y_m = \mathcal{Y} \]
+    and 
+    \[y_i \cap y_j = \emptyset\]
+    \(\forall i \neq j; i,j = 1, \ldots, m \)
     
 \end{itemize}
 % What does consistent mean??? why is this assumption important?
@@ -510,6 +516,15 @@
     For a \textit{weakly symmetric} DMC \((\mathcal{X}, \mathcal{Y}, Q)\), its information capacity is acheived by a \textit{uniform input distribution} and is given by
     \[C = \log_2|\mathcal{Y}| - H(q_1, q_2, \ldots, q_{|\mathcal{Y}|})\]
     where \((q_1, q_2, \ldots, q_{|\mathcal{Y}|})\) is any row from Q
+
+    \item \textbf{Lecture 20 Lemma (Information Capacity of quasi-symmetric channels): }
+    For a \textit{quasi-symmetric} DMC \((\mathcal{X}, \mathcal{Y}, Q=[P_{xy}])\), its information capacity C is acheived by a \textit{uniform input distribution} and is given by
+    \[C = \sum_{i=1}^m a_i* C_i\]
+    Where 
+    \[a_i = \sum_{y \in y_i} P_{xy}\]
+    (or sum of any row in \(Q_i\)), and
+
+    \[C_i = \log_2 |y_i| - H(\text{any row in matrix } \frac{1}{a_i} Q_i)\]    
 
 \end{itemize}
 
