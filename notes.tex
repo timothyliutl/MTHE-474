@@ -163,7 +163,7 @@
 \subsubsection{Theorems}
 \begin{itemize}
     \item \textbf{Lecture 6 Theorem (Jensen's Inequality):} Let \(K \subseteq \mathbb{R}\) (where \(K\) is a convex set?) and let \(f:k \to \mathbb{R}\) be a convex function. Also let  x be a RV with alphabet \(\mathcal{X} \subseteq k\) and finite mean, then
-    \[E[f(x)] \leq f(E[x])\]
+    \[E[f(x)] \geq f(E[x])\]
     Also if f is strictly convex, then the inequality is strict unless x is deterministic
     \item \textbf{Lecture 7 Theorem (Convexity/Concavity of Information Measures):}
        \\i. \(D(p||q)\) \ is convex in the pair \((p,q)\) (ie: if \(p_1,q_1\) and \(p_2,q_2\) are two pairs of PMFs defined on \(\mathcal{X}\)) then: \\
@@ -172,9 +172,9 @@
         \\
         \\
         ii.\ if \(x \sim  P_x\), then
-        \[H(x) = H(p_x) \text{ is concave in } P_x\]
+        \[H(x) = H(P_x) \text{ is concave in } P_x\]
         \\
-        iii.\ If \((x,y)~P_X P_{Y|X}\), then \(I(X;Y) = I(P_X, P_{Y|X})\) is concave in \(P_X\) for fixed \(P_{Y|X}\) and convex in \(P_{Y|X}\) for fixed \(P_X\)
+        iii.\ If \((x,y) \sim P_X P_{Y|X}\), then \(I(X;Y) = I(P_X, P_{Y|X})\) is concave in \(P_X\) for fixed \(P_{Y|X}\) and convex in \(P_{Y|X}\) for fixed \(P_X\)
 
 \end{itemize}
 
