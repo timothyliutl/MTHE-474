@@ -525,7 +525,51 @@
     (or sum of any row in \(Q_i\)), and
 
     \[C_i = \log_2 |y_i| - H(\text{any row in matrix } \frac{1}{a_i} Q_i)\]    
+\end{itemize}
 
+\section{Block Codes for Noisy Channels}
+\subsubsection{Observations}
+
+\subsubsection{Definitions}
+\begin{itemize}
+    \item \textbf{Lecture 21 Defintition (Block Codes for Discrete Channels): }
+    Given integers n and M, a (n,M) code is for a discrete channel \((\mathcal{X}, \mathcal{Y}, \{P_{Y^n|X^n}\}_{n=1}^\infty)\) with block length n and rate
+    \[R_n := \frac{1}{n} \log_2 M\]
+    (In message bits per channel symbol) consists of
+    \begin{itemize}
+        \item A mssage set \(\mu = \{1,2,\ldots, M\}\) intended for transmission
+        \item an encoding function
+        \[f: \mu \to \mathcal{X}^n\]
+        Yielding codewords \(f(1), f(2), \ldots, f(M) \in \mathcal{X}^n\) of length n. The set of codewards is called the codebook:
+        \[\mathcal{C}_n = \{f(1), f(2), \ldots, f(M)\}\]
+        \item a decoding function
+        \[g: \mathcal{Y}^n \to \mu\]
+    \end{itemize}
+    \item \textbf{Lecture 21 Definition (Average Probability of Error): } Given (n,M) code \(\mathcal{C}_n\), its average probability of error is given by
+    \begin{align*}
+        P_e & :=P(\hat{W} \neq W) \\
+        & = \sum_{w=1}^M P(W=w) P(g(Y^n)\neq w|W=w) \\
+        & = \frac{1}{M} \sum_{w=1}^M \lambda_w(\mathcal{C}_n)
+    \end{align*}
+    Where
+    \begin{align*}
+        \lambda_w(\mathcal{C}_n)&:= P(g(Y^n) \neq w | W = w) \\
+        & = P(g(Y^n)\neq w |X^n = f(w)) \\
+        & = \sum_{y^n \in \mathcal{Y}^n: g(y^n) \neq w} P_{Y^n|X^n}(y^n | f(w))
+    \end{align*}
+    is the code's \textit{contitional probability of decoding error} given that message w is sent over the channel.
+    \item \textbf{Lecture 21 Definition (Achievable): } A rate is called achieveable for a discrete channel if there exists a sequence of \((n, M_n)\) block codes \(\mathcal{C}_n\)
+    for the channel with
+    \[\liminf_{n \to \infty} \frac{1}{n} \log_2 M_n \geq R\]
+    and 
+    \[\lim_{n \to \infty} P_e(\mathcal{C}_n) = 0\]
+    \item \textbf{Lecture 21 Definition: (Operational Channel Capacity): } Denoted \(C_{op}\) is defined as follows
+    \[C_{op} := \sup \{R: R \text{ is achievable}\}\]
+\end{itemize}
+\subsubsection{Theorems/Lemmas}
+\subsubsection{Observations}
+\begin{itemize}
+    \item The operational capacity is the largest rate for which there exists a block code where the probability of error goes to zero as block length n approaches infinity.
 \end{itemize}
 
 \section{Tutorial Proofs}
