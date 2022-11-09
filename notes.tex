@@ -583,6 +583,21 @@
         \item \(|A^{(n)}_\delta| \leq 2^{(H(X,Y) + \delta)} \ \ \ \forall n\)
         \item \(|A^{(n)}_\delta| > (1-\delta) 2^{n*(H(X,Y) - \delta)}\) for n sufficiently large
     \end{itemize}
+    \item \textbf{Lecture 22 Theorem (Channel Coding Theorem): }
+    For a DMC \((\mathcal{X}, \mathcal{Y}, Q = [P_{XY}])\) with information capacity \(C:= \max_{P_X} I(X;Y)\), its operational capacity, \(C_op\) satisfies
+    \[C_{op} = C\]
+    In other words, the following two results hold
+    \begin{itemize}
+        \item Forward Part: For any \(0< \epsilon<1\), there exists \(\gamma = \gamma(e)>0\) and a sequence of \((n,M_n)\) block codes \(\mathcal{C}_n\) for the DMC with
+        \[\liminf_{n \to \infty} \frac{1}{n} \log_2 M_n \geq C - \gamma\]
+        and
+        \[P_e(\mathcal{C}_n)< \epsilon\]
+        for n sufficiently large
+        \item Converse Part: For any sequence of \((n, M_n)\) block codes \(\mathcal{C}_n\) for the DMC with
+        \[\liminf_{n \to \infty} \frac{1}{n} \log_2 M_n > C\]
+        we have that 
+        \[\liminf_{n \to \infty} P_e(\mathcal{C}_n)>0\]
+    \end{itemize}
 \end{itemize}
 \subsubsection{Observations}
 \begin{itemize}
