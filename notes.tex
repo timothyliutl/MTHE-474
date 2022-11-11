@@ -573,6 +573,17 @@
         & \big|\frac{-1}{n} \log_2 P_{Y^n}(y^n) - H(Y)\big| \leq \delta, \\
         & \big|\frac{-1}{n} \log_2 P_{X^n, Y^n} (x^n, y^n) - H(X,Y)\big|\} \\
     \end{align*}
+    \item \textbf{Lecture 24 Definition (Source Channel Block Code):}
+    Given a discrete source \(\{V_i\}_{i=1}^\infty\) with alphabet \(\mathcal{V}\) and discrete channel \((\mathcal{X}, \mathcal{Y}, \{P_{Y^n|X^n}\}_{n=1}^\infty)\) an n-to-n source channel block
+    code \(\mathcal{C}_{m,n}\) with rate \(\frac{m}{n}\) source symbols per channel symbols is a pair of maps \((f_{sc}, g_{sc})\)
+    \[f_{sc}: \mathcal{V}^m \to \mathcal{X}^n\]
+    and 
+    \[g_{sc}: \mathcal{Y}^n \to \mathcal{V}^m\]
+
+    \item \textbf{Lecture 24 Definition (Code Error Probability):}
+    \[P_e(\mathcal{C}_{m,n}):=P(\mathcal{V}^m \neq \hat{V}^m)\]
+    %write the rest later
+
 \end{itemize}
 \subsubsection{Theorems/Lemmas}
 \begin{itemize}
@@ -584,7 +595,7 @@
         \item \(|A^{(n)}_\delta| > (1-\delta) 2^{n*(H(X,Y) - \delta)}\) for n sufficiently large
     \end{itemize}
     \item \textbf{Lecture 22 Theorem (Channel Coding Theorem): }
-    For a DMC \((\mathcal{X}, \mathcal{Y}, Q = [P_{XY}])\) with information capacity \(C:= \max_{P_X} I(X;Y)\), its operational capacity, \(C_op\) satisfies
+    For a DMC \((\mathcal{X}, \mathcal{Y}, Q = [P_{XY}])\) with information capacity \(C:= \max_{P_X} I(X;Y)\), its operational capacity, \(C_{op}\) satisfies
     \[C_{op} = C\]
     In other words, the following two results hold
     \begin{itemize}
@@ -601,11 +612,19 @@
     \item \textbf{Lecture 23 Lemma: } Given a DMC \((\mathcal{X}, \mathcal{Y}, Q = [P_{XY}])\) with arbitrary input word \(X^n\) resulting in output word \(Y^n\), then
     \[I(X^n;Y^n)\leq n * C\]
     where, \(C:= \max_{P_X} I(X;Y)\)
+
+    \item \textbf{Lecture 24 Theorem (Lossless Joint Souce-Channel coding Theorem for Rate-one codes):}
+    Given a discrete stationary source \(\{V_i\}_{i=1}^\infty\) with alphabet \(\mathcal{V}\) and entropy rate \(H(\mathcal{V})\) a DMC \((\mathcal{X}, \mathcal{Y}, \{P_{Y^n|X^n}\}_{n=1}^\infty)\) with capacity C, we have:
+    \begin{itemize}
+        \item Forward part (Achievability):
+    \end{itemize}
 \end{itemize}
 \subsubsection{Observations}
 \begin{itemize}
     \item The operational capacity is the largest rate for which there exists a block code where the probability of error goes to zero as block length n approaches infinity.
 \end{itemize}
+
+\section{Differential Entropy}
 
 \section{Tutorial Proofs}
 \subsection{Week 2 Tutorial}
