@@ -569,9 +569,9 @@
     \item \textbf{Lecture 21 Definition (Jointly typical set): }
     Let \(\{(x_i, y_y)\}_{i=1}^\infty\) be a memoryless source with common pmf \(P_{XY}\) on \(\mathcal{X} \times \mathcal{Y}\). Given \(\delta>0\) and integer \(n\geq 1\), the jointly typical set \(A^{(n)}_\delta\) with respect to the source is
     \begin{align*}
-        A^{(n)}_\delta := \{ (x^n, y^n \in \mathcal{X}^n \times \mathcal{Y}^n) :& \big|\frac{-1}{n} \log_2 P_{X^n} x^n - H(X)\big| \leq \delta, \\
+        A^{(n)}_\delta := \{ (x^n, y^n \in \mathcal{X}^n \times \mathcal{Y}^n) :& \big|\frac{-1}{n} \log_2 P_{X^n} (x^n) - H(X)\big| \leq \delta, \\
         & \big|\frac{-1}{n} \log_2 P_{Y^n}(y^n) - H(Y)\big| \leq \delta, \\
-        & \big|\frac{-1}{n} \log_2 P_{X^n, Y^n} (x^n, y^n) - H(X,Y)\big|\} \\
+        & \big|\frac{-1}{n} \log_2 P_{X^n, Y^n} (x^n, y^n) - H(X,Y)\big| \leq \delta\} \\
     \end{align*}
     \item \textbf{Lecture 24 Definition (Source Channel Block Code):}
     Given a discrete source \(\{V_i\}_{i=1}^\infty\) with alphabet \(\mathcal{V}\) and discrete channel \((\mathcal{X}, \mathcal{Y}, \{P_{Y^n|X^n}\}_{n=1}^\infty)\) an n-to-n source channel block
@@ -616,7 +616,33 @@
     \item \textbf{Lecture 24 Theorem (Lossless Joint Souce-Channel coding Theorem for Rate-one codes):}
     Given a discrete stationary source \(\{V_i\}_{i=1}^\infty\) with alphabet \(\mathcal{V}\) and entropy rate \(H(\mathcal{V})\) a DMC \((\mathcal{X}, \mathcal{Y}, \{P_{Y^n|X^n}\}_{n=1}^\infty)\) with capacity C, we have:
     \begin{itemize}
-        \item Forward part (Achievability):
+        \item \textbf{Forward part (Achievability):} \\
+        For any \(0< \epsilon < 1\) and given that the stationary source is also ergodic, if
+        \[H(\mathcal{V})<C\]
+        then there exists a sequence of rate-one source-channel codes \(\{\mathcal{C}_{m,m}\}_{m=1}^\infty\) with error probability satisfying
+        \[P_e(\mathcal{C}_{m,m})<\epsilon\]
+        for m sufficiently large
+        \item \textbf{Converse Part:} \\
+        If 
+        \[H(\mathcal{V})>C\]
+        then any sequence of rate-one source channel codes \(\{\mathcal{C}_{m,m}\}_{n=1}^\infty\) for the source and channel has error probability satisfying
+        \[\liminf_{m \to \infty} P_e(\mathcal{C}_{m,m})>0\]
+    \end{itemize}
+
+    \item \textbf{Lecture 24 Theorem (Lossless Join Source-Channel Coding Theorem for General Rates):} 
+    Given a discrete stationary source \(\{v_i\}_{i=1}^\infty\) with alphabet \(\mathcal{V}\) and entropy rate \(H(\mathcal{V})\), and a DMC \((\mathcal{X}, \mathcal{Y}, P_{Y|X})\) with capacity C, where
+    both \(H(\mathcal{V})\) and X are measured in the same units, then the following hold
+    \begin{itemize}
+        \item \textbf{Forward Part (Achieveability):} \\
+        For any \(0<\epsilon<1\) and given that the stationary source is also ergodic, there exists a sequence of m-to-\(n_m\) source channel codes \(\{\mathcal{C}_{m, n_m}\}_{m=1}^\infty\) with error probability
+        \[P_e(\mathcal{C}_{m,n_m})<\epsilon\]
+        for m sufficiently large, if
+        \[\limsup_{m \to \infty} \frac{m}{n_m}H(\mathcal{V})<C\]
+        \item \textbf{Converse Part:} \\
+        Any Sequence of m-to-\(n_m\) source-channel codes \(\{\mathcal{C}_{m, n_m}\}_{m=1}^\infty\) for the source and channel with
+        \[\limsup_{m \to \infty}H(\mathcal{V})>C\]
+        has an error probability
+        \[\liminf_{m \to \infty} P_e(\mathcal{C}_{m,n_m})>0\]
     \end{itemize}
 \end{itemize}
 \subsubsection{Observations}
