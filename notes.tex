@@ -574,7 +574,7 @@
         & \big|\frac{-1}{n} \log_2 P_{X^n, Y^n} (x^n, y^n) - H(X,Y)\big| \leq \delta\} \\
     \end{align*}
     \item \textbf{Lecture 24 Definition (Source Channel Block Code):}
-    Given a discrete source \(\{V_i\}_{i=1}^\infty\) with alphabet \(\mathcal{V}\) and discrete channel \((\mathcal{X}, \mathcal{Y}, \{P_{Y^n|X^n}\}_{n=1}^\infty)\) an n-to-n source channel block
+    Given a discrete source \(\{V_i\}_{i=1}^\infty\) with alphabet \(\mathcal{V}\) and discrete channel \((\mathcal{X}, \mathcal{Y}, \{P_{Y^n|X^n}\}_{n=1}^\infty)\) an m-to-n source channel block
     code \(\mathcal{C}_{m,n}\) with rate \(\frac{m}{n}\) source symbols per channel symbols is a pair of maps \((f_{sc}, g_{sc})\)
     \[f_{sc}: \mathcal{V}^m \to \mathcal{X}^n\]
     and 
@@ -650,7 +650,37 @@
     \item The operational capacity is the largest rate for which there exists a block code where the probability of error goes to zero as block length n approaches infinity.
 \end{itemize}
 
-\section{Differential Entropy}
+\section{Information theory for continuous alphabet systems}
+\subsection{Differential Entropy}
+\subsubsection{Definitions}
+\begin{itemize}
+    \item \textbf{Lecture 25 Definition (Differential Entropy):}
+    The differential entropy of a real RV X with PDF \(f_x\) and support \(S_x\) is given by
+    \[h(x) := -\int_{S_x}f_x(t)\log_2 f_x(t)dt\]
+    and in the multivariate case
+    \[h(x^n):=-\int_{S_{x^n}}f_{x^n}(x_1, \ldots, x_n)\log_2 f_{x^n}(x_1, \ldots, x_n)dx_1, \ldots, dx_n\]
+    \item \textbf{Lecture 26 Definition (Conditional Differential Entropy):}
+    Let \((x,y)~f_{xy}\) with support \(S_{XY} \subseteq \mathbb{R}^2\). The conditional differential entropy of Y given X is given by 
+    \[h(y|x) := -\int_{S_{xy}} f_{xy}(x,y) \log_2 f_{y|x}(y|x) dx dy\]
+
+    Chain rule:
+    \[h(x,y) = h(x) + h(y|x) = h(y) + h(x|y)\]
+
+    \textbf{Lecture 26 Definition (Divergence):}
+    Let X and Y be 2 RVs with pdfs \(f_x \text{ and } f_y\) with supports \(S_X \subseteq S_Y \subseteq \mathbb{R}\)
+
+    \[D(X||Y):= \int_{S_X} f_x(t) \log_2 \frac{f_x(t)}{f_y(t)} dt\]
+    Multivariable case:
+    \[D(X^n||Y^n) = \int_{S_{X^n}} f_{X^n}(t_1, \ldots, t_n) \log \frac{f_{X^n}(t_1, \ldots, t_n)}{f_{Y^n}(t_1, \ldots, t_n)}dt_1 \ldots dt_n\]
+
+    \item \textbf{Lecture 26 Definition (Differential Cross Entropy):}
+    \[h(f_x;f_y) = \int_{S_X} f_x(t) \log_2 \frac{1}{f_y(t)}dt\]
+    Note: \(D(f_x||f_y) = -h(f_x) + h(f_x;f_y) \geq 0\)
+
+    \item \textbf{lecture 26 Definition (Mutual Information):}
+    \[I(X;Y):= D(f_{xy}||f_x f_y)\]
+    \[= h(x) + h(y) - h(x,y)\]
+\end{itemize}
 
 \section{Tutorial Proofs}
 \subsection{Week 2 Tutorial}
