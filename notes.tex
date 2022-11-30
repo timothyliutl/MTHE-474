@@ -680,6 +680,43 @@
     \item \textbf{lecture 26 Definition (Mutual Information):}
     \[I(X;Y):= D(f_{xy}||f_x f_y)\]
     \[= h(x) + h(y) - h(x,y)\]
+
+    \item \textbf{Lecture 27 Definition (Multivariate Gaussian):}
+    Refer to textbook page 177 for this definition
+
+    \item \textbf{Lecture 28 Definition (Typical Set):}
+    For fixed \(\epsilon > 0\) and n,
+    \[A_{\epsilon}^{(n)} = \{x^n \in S_{x^n}: |-\frac{1}{n} \log_2 f_{X^n}(X^n) - h(x)| \leq \epsilon\}\]
+    \item \textbf{Lecture 28 Definition (Volume):}
+    For \(\mathcal{A} \subseteq \mathbb{R}^n\)
+    \[vol(\mathbb{R}) = \int_{\mathbb{R}} dx_1, \ldots, dx_n\]
+\end{itemize}
+\subsubsection{Theorems}
+\begin{itemize}
+    \item \textbf{Lecture 27 Theorem (Join Differential Entropy of multivariate gaussian):}
+    if
+    \[\underline{X} = (x_1, \ldots, x_n)^T \sim N(\underline{\mu}, k_{\underline{x}})\]
+    then
+    \[h(\underline{x}) = \frac{1}{2} \log_2 ((2\pi e)^n \det(k_{\underline{x}}))\]
+    \item  Corollary:
+    For any real-valued nxn positive-definite matrix \(K=[k_{i,j}]\)
+    we have 
+    \[\det(K) \leq \prod_{i=1}^{n} k_{i,i}\]
+    with equality iff K is a diagonal matrix
+
+    \item \textbf{Lecture 28 Theorem (Maximal Differential Entropy):}
+    \[h(\underline{x}) = h(x_1, \ldots, x_n) \leq \frac{1}{2} \log_2((2\pi e)^n \det(K_{\underline{x}}))\]
+    with equality iff \(X \sim (\underline{\mu}, K_{\underline{X}})\)
+    \item \textbf{Lecture 28 Theorem (AEP for continuous idd RVs):}
+    Let \(\{X_i\}_{i=1}^\infty\) be a memoryless real source with PDF \(f_x\) and support \(S_x \subseteq \mathbb{R}\)
+    \[-\frac{1}{n} \log_2 f_{X^n}(x_1, \ldots, x_n) \Longrightarrow E[-\log_2 f_x(x)] = h(x)\]
+    in probability as \(n \to \infty\)
+    \item \textbf{Lecture 28 Theorem (Consequences of the AEP for Continuouse source):}
+    \begin{itemize}
+        \item \(\lim_{n\to\infty} P_{X^n}(\mathcal{A}_{\epsilon}^{(n)})=1\)
+        \item \(Vol(\mathcal{A}_{\epsilon}^{(n)}) \leq 2^{n(h(x)+\epsilon)}\) For all n
+        \item \(Vol(\mathcal{A}_{\epsilon}^{(n)}) > (1-\epsilon) 2^{n(h(x)-\epsilon)}\)
+    \end{itemize}
 \end{itemize}
 
 \section{Tutorial Proofs}
