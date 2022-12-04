@@ -640,7 +640,7 @@
         \[\limsup_{m \to \infty} \frac{m}{n_m}H(\mathcal{V})<C\]
         \item \textbf{Converse Part:} \\
         Any Sequence of m-to-\(n_m\) source-channel codes \(\{\mathcal{C}_{m, n_m}\}_{m=1}^\infty\) for the source and channel with
-        \[\limsup_{m \to \infty}H(\mathcal{V})>C\]
+        \[\limsup_{m \to \infty}\frac{m}{n_m}H(\mathcal{V})>C\]
         has an error probability
         \[\liminf_{m \to \infty} P_e(\mathcal{C}_{m,n_m})>0\]
     \end{itemize}
@@ -717,6 +717,34 @@
         \item \(Vol(\mathcal{A}_{\epsilon}^{(n)}) \leq 2^{n(h(x)+\epsilon)}\) For all n
         \item \(Vol(\mathcal{A}_{\epsilon}^{(n)}) > (1-\epsilon) 2^{n(h(x)-\epsilon)}\)
     \end{itemize}
+\end{itemize}
+\subsection{Discrete Time Memoreyless Gaussian Channel}
+\subsubsection{Definitions}
+\begin{itemize}
+    \item \textbf{Discrete-Time Continuous Alphabet Memoryless Channels}
+    For a discrete time channel with continuous input and output alphabet, the channel is called memoryless if
+    \[f_{Y^n|X^n} (y^n|x^n) = \prod_{i=1}^n f_{Y|X}(y_i|x_i)\]
+
+    In reality, the cost of using the channel is not free. \(b(x)\) is called the cost function and denotes the cost of input \(x\) being sent over the channel and P denotes the budget per input symbol.
+    The average cost constraint \((t(*), P)\) requires that on any n-tuple \(x^n = (x_1, \ldots, x_n)\) sent over the channel satisfies
+    \[\frac{1}{n} \sum_{i=1}^n t(x_i) \leq P\]
+
+    \item \textbf{Information Capacity with Input Cost:}
+    Similar definition in the discrete case. The information capacity of a discrete-time memoryless channel \((\mathcal{X}, \mathcal{Y}, f_{Y|X})\) with input average costraint \((t(*), P)\) is given by
+    \[C(P) := \sup_{F_x: E[t(x)]\leq P} I(X;Y)\]
+    In other word, the suprememum of mutual information over all input distributions that satisfy the cost contraints.
+
+\end{itemize}
+\subsubsection{Theorems/Lemmas}
+\begin{itemize}
+    \item \textbf{Lecture 29 Lemma (Concavity of C(P) in P):}
+    \(C(P)\) is concave, continuous, and increasing in P for \(P>0\)
+\end{itemize}
+\subsubsection{Observations}
+\begin{itemize}
+    \item \textbf{Lecture 29:}
+    For discrete-time memoryless gaussian chgannel with noise \(\sigma^2\) and input power constraint \(P\),
+    \[C(P) = \frac{1}{2} \log_2(1+\frac{P}{\sigma^2})\]
 \end{itemize}
 
 \section{Tutorial Proofs}
