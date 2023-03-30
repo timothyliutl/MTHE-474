@@ -139,13 +139,13 @@
 \subsubsection{Theorems}
 \begin{itemize}
     \item \textbf{Lecture 7 Theorem (Data Processing Inequality):} If \(X \to Y \to Z\), then 
-    \[I(X;Y) \leq I(X;Z)\]
+    \[I(X;Z) \leq I(X;Y)\]
     \begin{itemize}
         \item Another way to think of this is that the futher the RVs are along the markov chain, the less relevant the RVs are with eachother and the less information we get
     \end{itemize}
     \item \textbf{Lecture 8 Theorem (DPI for Divergence):} Given fixed conditional PMF \(P_{Y|X}\) on \(y \times x\), which describes a channel with input x and output y,
     let \(P_x\) and \(q_x\) be 2 possible PMFs for input \(x\) with corresponding output PMFs \(P_y \text{ and } q_y\) respectively, then
-    \[D(P_x||q_x) \leq D(P_y||q_y)\]
+    \[D(P_x||q_x) \geq D(P_y||q_y)\]
 \end{itemize}
 
 \subsection{Convex/Concavity of Information Measures}
@@ -196,7 +196,7 @@
 
     \item \textbf{Lecture 9 Definition (Code block):} Given integers \(D \geq 2\), \(n \geq 1\) and \(k = k(n)\) (k is a function of n and describes number of symbols in a block)  a \((k,n)\) D-ary Fixed length code \(\rho\) for a DMS \(\{X_{i}\}^\infty_{i=1}\) with alphabet \(\mathcal{X}\) consists of the following pair of encoding and decoding functions
     \[\text{Encoding: } f: \mathcal{X}^n \to \{0, 1, \ldots, D-1\}^k\] 
-    \[\text{Decoding: } g: \{0, 1, \ldots, D-1\}^k \to \mathcal{X}\]
+    \[\text{Decoding: } g: \{0, 1, \ldots, D-1\}^k \to \mathcal{X}^n\]
     The range of f is called the \(\mathit{codebook}\)
     \\ The code (or Compression) rate is defined as \(R = \frac{k}{n}\) in D-ary code symbols / Source symbols 
    \\
